@@ -6,15 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://jlyzoi.github.io">
-  <title>吉林一中信息竞赛团队博客</title>
+  <title>「算法笔记」SPFA算法 | 吉林一中信息竞赛团队博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="吉林一中信息竞赛团队博客">
-<meta property="og:url" content="https://jlyzoi.github.io/index.html">
+  <meta name="description" content="$SPFA$算法也是一种求单源最短路的算法相比于$Dijkstra$,$SPFA$算法的时间复杂度更低(但没有带堆优化的$Dijkstra$快)而且$SPFA$可以用于带负权边的图($Dijkstra$不可以),也可以判断是否存在负权回路">
+<meta name="keywords" content="Cpp,算法,单源最短路">
+<meta property="og:type" content="article">
+<meta property="og:title" content="「算法笔记」SPFA算法">
+<meta property="og:url" content="https://jlyzoi.github.io/2019/05/20/「算法笔记」SPFA算法/index.html">
 <meta property="og:site_name" content="吉林一中信息竞赛团队博客">
+<meta property="og:description" content="$SPFA$算法也是一种求单源最短路的算法相比于$Dijkstra$,$SPFA$算法的时间复杂度更低(但没有带堆优化的$Dijkstra$快)而且$SPFA$可以用于带负权边的图($Dijkstra$不可以),也可以判断是否存在负权回路">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-05-20T04:59:32.457Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="吉林一中信息竞赛团队博客">
+<meta name="twitter:title" content="「算法笔记」SPFA算法">
+<meta name="twitter:description" content="$SPFA$算法也是一种求单源最短路的算法相比于$Dijkstra$,$SPFA$算法的时间复杂度更低(但没有带堆优化的$Dijkstra$快)而且$SPFA$可以用于带负权边的图($Dijkstra$不可以),也可以判断是否存在负权回路">
   
   
     <link rel="icon" href="/jlyz.png">
@@ -142,16 +147,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-「算法笔记」SPFA算法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-「算法笔记」SPFA算法" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/20/「算法笔记」SPFA算法/">「算法笔记」SPFA算法</a>
+    <h1 class="article-title" itemprop="name">
+      「算法笔记」SPFA算法
     </h1>
   
 
@@ -165,383 +168,30 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>$SPFA$算法也是一种求单源最短路的算法<br>相比于$Dijkstra$,$SPFA$算法的时间复杂度更低(但没有带堆优化的$Dijkstra$快)<br>而且$SPFA$可以用于带负权边的图($Dijkstra$不可以),也可以判断是否存在负权回路</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Cpp</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">单源最短路</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/算法//" class="article-tag-list-link color3">算法</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/05/20/「算法笔记」SPFA算法/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-「Luogu-P2723-P1631-P2850」小练习-题解" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/20/「Luogu-P2723-P1631-P2850」小练习-题解/">「Luogu P2723 P1631 P2850」小练习-题解</a>
-    </h1>
-  
-
-        
-        <a href="/2019/05/20/「Luogu-P2723-P1631-P2850」小练习-题解/" class="archive-article-date">
-  	<time datetime="2019-05-20T04:35:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-20</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>战神留的还有一道<a href="https://www.luogu.org/problemnew/show/P3378" target="_blank" rel="noopener">「P3378」堆</a>,但是是模板,就不用多说了吧</p>
-<h2 id="mathcal-「P2723」-丑数"><a href="#mathcal-「P2723」-丑数" class="headerlink" title="$\mathcal{「P2723」}$ 丑数"></a>$\mathcal{「P2723」}$ <a href="https://www.luogu.org/problemnew/show/P2723" target="_blank" rel="noopener">丑数</a></h2>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Cpp</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">题解</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Luogu</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/题解//" class="article-tag-list-link color3">题解</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/05/20/「Luogu-P2723-P1631-P2850」小练习-题解/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-「算法笔记」Dijkstra算法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/10/「算法笔记」Dijkstra算法/">「算法笔记」Dijkstra算法及堆优化</a>
-    </h1>
-  
-
-        
-        <a href="/2019/05/10/「算法笔记」Dijkstra算法/" class="archive-article-date">
-  	<time datetime="2019-05-10T04:31:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-10</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>$Dijkstra$算法是寻找单源最短路(径)的算法,即寻找某个点(源点)到其他各点的最短路(径)<br>但$Dijkstra$算法无法处理含有<strong>负权边</strong>的情况</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Cpp</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">单源最短路</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/算法//" class="article-tag-list-link color3">算法</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/05/10/「算法笔记」Dijkstra算法/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-「Luogu-P5020-P1621-P4942」小练习-题解" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/09/「Luogu-P5020-P1621-P4942」小练习-题解/">「Luogu P5020 P1621 P4942」小练习-题解</a>
-    </h1>
-  
-
-        
-        <a href="/2019/05/09/「Luogu-P5020-P1621-P4942」小练习-题解/" class="archive-article-date">
-  	<time datetime="2019-05-09T04:58:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-09</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="mathcal-「P5020」-货币系统"><a href="#mathcal-「P5020」-货币系统" class="headerlink" title="$\mathcal{「P5020」}$ 货币系统"></a>$\mathcal{「P5020」}$ <a href="https://www.luogu.org/problemnew/show/P5020" target="_blank" rel="noopener">货币系统</a></h2><p>表面上是数论，其实就是个<strong><em>动态规划</em></strong></p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Cpp</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">题解</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Luogu</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/题解//" class="article-tag-list-link color3">题解</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/05/09/「Luogu-P5020-P1621-P4942」小练习-题解/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-博客开通通知" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/09/博客开通通知/">博客开通通知</a>
-    </h1>
-  
-
-        
-        <a href="/2019/05/09/博客开通通知/" class="archive-article-date">
-  	<time datetime="2019-05-09T04:45:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-09</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>吉林一中信息竞赛团队博客于$2019-5-9$成功开通</p>
+<a id="more"></a>
+<h2 id="算法思想"><a href="#算法思想" class="headerlink" title="算法思想"></a>算法思想</h2><ul>
+<li>设立一个队列用来保存待优化的结点</li>
+<li>每次取出队首结点$u$,并且用$u$点当前的最短路径值对离开$u$点所指向的结点$v$进行<a href="https://www.jlyzoi.com.cn/2019/05/10/%E3%80%8C%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0%E3%80%8DDijkstra%E7%AE%97%E6%B3%95/#%E8%BE%93%E5%87%BA%E8%B7%AF%E5%BE%84" target="_blank" rel="noopener">松弛操作</a>,如果$v$点的最短路径估计值有所调整,且$v$点不在当前的队列中,就将$v$点放入队尾。</li>
+<li>这样不断从队列中取出结点来进行松弛操作,直至队列空为止</li>
+<li>最后$dist$数组中的值就是最短路径</li>
+</ul>
+<p>时间复杂度$O(VE)$(最坏情况)</p>
+<p><strong><em>证明</em></strong>:</p>
+<blockquote>
+<p>每次将点放入队尾，都是经过松弛操作达到的。换言之，每次的优化将会有某个点v的最短路径估计值d[v]变小。所以算法的执行会使d越来越小。由于我们假定图中不存在负权回路，所以每个结点都有最短路径值。因此，算法不会无限执行下去，随着d值的逐渐变小，直到到达最短路径值时，算法结束，这时的最短路径估计值就是对应结点的最短路径值。</p>
 </blockquote>
-<p>本博客主要登载一些算法学习笔记和题解和$…$<br>欢迎同学们通过站长$QQ$进行投稿</p>
-        
+<p>来自<a href="https://baike.baidu.com/item/SPFA%E7%AE%97%E6%B3%95/8297411?fromtitle=SPFA&amp;fromid=11018124&amp;fr=aladdin#1" target="_blank" rel="noopener">百度百科</a></p>
+<h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><h3 id="邻接表"><a href="#邻接表" class="headerlink" title="邻接表"></a>邻接表</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">10010</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxm = <span class="number">500010</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n, m, s, dist[maxn], vis[maxn];</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> cnt, head[maxn];</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Edge</span> &#123;</span></span><br><span class="line">    <span class="keyword">int</span> next, to, dis;</span><br><span class="line">&#125;edge[maxm];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> from, <span class="keyword">int</span> to, <span class="keyword">int</span> dis)</span> </span>&#123;</span><br><span class="line">    edge[++cnt].next = head[from];</span><br><span class="line">    edge[cnt].to     = to;</span><br><span class="line">    edge[cnt].dis    = dis;</span><br><span class="line">    head[from]       = cnt;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">SPFA</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">queue</span>&lt;<span class="keyword">int</span>&gt; q;</span><br><span class="line">    <span class="built_in">memset</span>(dist, <span class="number">0x7f</span>, <span class="keyword">sizeof</span>(dist));</span><br><span class="line">    q.push(s);</span><br><span class="line">    dist[s] = <span class="number">0</span>; vis[s] = <span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">while</span> (!q.empty()) &#123;</span><br><span class="line">        <span class="keyword">int</span> u = q.front();</span><br><span class="line">        q.pop(); vis[u] = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = head[u]; i; i = edge[i].next) &#123;</span><br><span class="line">            <span class="keyword">int</span> v = edge[i].to;</span><br><span class="line">            <span class="keyword">if</span> (dist[v] &gt; dist[u] + edge[i].dis) &#123;</span><br><span class="line">                dist[v] = dist[u] + edge[i].dis;</span><br><span class="line">                <span class="keyword">if</span> (!vis[v]) &#123;</span><br><span class="line">                    vis[v] = <span class="literal">true</span>;</span><br><span class="line">                    q.push(v);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="vector"><a href="#vector" class="headerlink" title="vector"></a>vector</h3><p>也可以使用之前介绍过的<a href="https://www.jlyzoi.com.cn/2019/05/10/%E3%80%8C%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0%E3%80%8DDijkstra%E7%AE%97%E6%B3%95/#vector%E5%AD%98%E5%9B%BE%E7%AE%80%E4%BB%8B" target="_blank" rel="noopener">vector存图方法</a>,代码简洁<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">510</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Edge</span> &#123;</span></span><br><span class="line">    <span class="keyword">int</span> from, to, val;</span><br><span class="line">    Edge(<span class="keyword">int</span> u, <span class="keyword">int</span> v, <span class="keyword">int</span> w): from(u), to(v), val(w) &#123;&#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="built_in">vector</span>&lt;Edge&gt; edges;</span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; G[maxn];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> u, <span class="keyword">int</span> v, <span class="keyword">int</span> w)</span> </span>&#123;</span><br><span class="line">    edges.push_back(Edge(u, v, w));</span><br><span class="line">    <span class="keyword">int</span> mm = edges.size();</span><br><span class="line">    G[u].push_back(mm - <span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> dist[maxn], vis[maxn];</span><br><span class="line"><span class="keyword">int</span> n, m, w;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">SPFA</span><span class="params">(<span class="keyword">int</span> s)</span> </span>&#123;</span><br><span class="line">    <span class="built_in">queue</span>&lt;<span class="keyword">int</span>&gt; q;</span><br><span class="line">    q.push(s);</span><br><span class="line">    dist[s] = <span class="number">0</span>; vis[s] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (!q.empty()) &#123;</span><br><span class="line">        <span class="keyword">int</span> u = q.front(); q.pop();</span><br><span class="line">        vis[u] = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; G[u].size(); ++i) &#123;</span><br><span class="line">            Edge&amp; e = edges[G[u][i]];</span><br><span class="line">            <span class="keyword">if</span> (dist[e.to] &gt; dist[u] + e.val) &#123;</span><br><span class="line">                dist[e.to] = dist[u] + e.val;</span><br><span class="line">                <span class="keyword">if</span> (!vis[e.to]) &#123;</span><br><span class="line">                    vis[e.to] = <span class="number">1</span>;</span><br><span class="line">                    q.push(e.to);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="判断负环"><a href="#判断负环" class="headerlink" title="判断负环"></a>判断负环</h2><p>如果任意一条边被修改大于$n$次(执行$n$次松弛操作),这个图内一定存在至少一个负环<br>我们可以使用一个数组$cnt$来记录每条边执行松弛操作的次数<br>代码如下<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">510</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Edge</span> &#123;</span></span><br><span class="line">    <span class="keyword">int</span> from, to, val;</span><br><span class="line">    Edge(<span class="keyword">int</span> u, <span class="keyword">int</span> v, <span class="keyword">int</span> w): from(u), to(v), val(w) &#123;&#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="built_in">vector</span>&lt;Edge&gt; edges;</span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; G[maxn];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> u, <span class="keyword">int</span> v, <span class="keyword">int</span> w)</span> </span>&#123;</span><br><span class="line">    edges.push_back(Edge(u, v, w));</span><br><span class="line">    <span class="keyword">int</span> mm = edges.size();</span><br><span class="line">    G[u].push_back(mm - <span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> dist[maxn], vis[maxn], cnt[maxn];</span><br><span class="line"><span class="keyword">int</span> n, m, w;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">SPFA</span><span class="params">(<span class="keyword">int</span> s)</span> </span>&#123;</span><br><span class="line">    <span class="built_in">queue</span>&lt;<span class="keyword">int</span>&gt; q;</span><br><span class="line">    q.push(s);</span><br><span class="line">    dist[s] = <span class="number">0</span>; vis[s] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (!q.empty()) &#123;</span><br><span class="line">        <span class="keyword">int</span> u = q.front(); q.pop();</span><br><span class="line">        vis[u] = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; G[u].size(); ++i) &#123;</span><br><span class="line">            Edge&amp; e = edges[G[u][i]];</span><br><span class="line">            <span class="keyword">if</span> (dist[e.to] &gt; dist[u] + e.val) &#123;</span><br><span class="line">                dist[e.to] = dist[u] + e.val;</span><br><span class="line">                <span class="keyword">if</span> (!vis[e.to]) &#123;</span><br><span class="line">                    vis[e.to] = <span class="number">1</span>;</span><br><span class="line">                    q.push(e.to);</span><br><span class="line">                    cnt[e.to]++;      <span class="comment">//次数+1</span></span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">if</span> (cnt[e.to] &gt; n) &#123;  <span class="comment">//执行n次操作</span></span><br><span class="line">                    <span class="keyword">return</span> <span class="literal">true</span>;      <span class="comment">//存在负环</span></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;                     <span class="comment">//不存在负环</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<hr>
+<p><strong><em>参考</em></strong>:</p>
+<ul>
+<li><a href="https://baike.baidu.com/item/SPFA%E7%AE%97%E6%B3%95/8297411?fr=aladdin" target="_blank" rel="noopener">百度词条-SPFA算法</a></li>
+<li><a href="http://keyblog.cn/article-21.html" target="_blank" rel="noopener">KEY随记-SPFA算法</a></li>
+</ul>
+<hr>
+<div style="text-align: right"> $Author: \mathcal{Tony\_Wong}$ </div>
       
 
       
@@ -554,25 +204,103 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">公告</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Cpp</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">单源最短路</a>
         		</li>
       		
 		</ul>
 	</div>
 
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/算法//" class="article-tag-list-link color3">算法</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/05/09/博客开通通知/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACq0lEQVR42u3aQW7DMAwEwPz/0y3QU4HU6pI00xQYn4LAsTk6SMpSj0d8fXxdyTffv3++5/nOq3uqd44uPDw8vFbpV9dzoWfAuZQcfB7QpGY8PDy8bd65lJxxVURvOPJ6Lr/Hw8PD+1Ne79rYoOPh4eH9F975/h5g/hkPDw/vr3hJGHGevqukfOP+oqwFDw8Pr7bLLTTA3uHzYn8PDw8Pb9BV78UNyeKRT/eTavHw8PA2eNUWVC+MyDfNVWRUDx4eHt4C796/+vmU3Qs7bsiq8fDw8Aa8yeY4n3t7kXH1INcvm2k8PDy8m3jzLex5qci3y/lAVxcJPDw8vD1e/uPq6/OFJFlUqksRHh4e3h7vXEQh1YhLnCwbCR4PDw9vgzchzY8UbDS9fjgZgYeHh7fGm2AmxwKqC0+5AYaHh4e3wJtM5T1YNSauxhbN/h4eHh5ewKtukauHruZxbXXoo/MReHh4eGNeb6KvhgjJAOUhb/n5eHh4eDfxemHB/JtqnJEf0sLDw8N7JW+DNGliPYrXD5Xj4eHhLfAmja6k0F4cXI0noj8AeHh4eDfxetHAJPC9a1CSCvHw8PC2eb0QtoqZPyffXuPh4eHt8Xp78GqJ1S1yUlvUAMPDw8O7lVc9NFANLJKIIXnjaIjx8PDwFnij9LcVNFTbY/kC1nwBHh4eXvEtvWk9Yc+PYeUHBS5/hYeHh/cS3uRxeVx7V3SLh4eH90reR/Hqtf+ryPnG+rIBhoeHhzfmlZvxrVdWQ4Q5Gw8PD2+bN1kMqgHrZDN9ftfl2/Hw8PDWeL2GVr5dviukaGYteHh4eG/Ay49S5W2wnJoc2MLDw8N7B975cb2cY7J4FNpgeHh4eAu8JIzIp+9JMDE5lNAcPzw8PLwir9cAmxwmuIs9X5bw8PDwirxP21RK3wC9FNEAAAAASUVORK5CYII=" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2019/05/20/「Luogu-P2723-P1631-P2850」小练习-题解/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">「Luogu P2723 P1631 P2850」小练习-题解</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -587,13 +315,32 @@
         </div>
         
         
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#算法思想"><span class="toc-number">1.</span> <span class="toc-text">算法思想</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码实现"><span class="toc-number">2.</span> <span class="toc-text">代码实现</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#邻接表"><span class="toc-number">2.1.</span> <span class="toc-text">邻接表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#vector"><span class="toc-number">2.2.</span> <span class="toc-text">vector</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#判断负环"><span class="toc-number">3.</span> <span class="toc-text">判断负环</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
     </div>
 </aside>
 
 
 
+  
+  
+  
 
   
+
+  
+
   
 
 
@@ -616,8 +363,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: true,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
