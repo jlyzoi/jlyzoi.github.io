@@ -6,15 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://jlyzoi.github.io">
-  <title>Category: 算法 | 吉林一中信息竞赛团队博客</title>
+  <title>「算法笔记」Prim算法 | 吉林一中信息竞赛团队博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="吉林一中信息竞赛团队博客">
-<meta property="og:url" content="https://jlyzoi.github.io/categories/算法/index.html">
+  <meta name="description" content="$Prim$算法是一个求图中最小生成树的算法">
+<meta name="keywords" content="Cpp,算法,最小生成树">
+<meta property="og:type" content="article">
+<meta property="og:title" content="「算法笔记」Prim算法">
+<meta property="og:url" content="https://jlyzoi.github.io/2019/06/03/「算法笔记」Prim算法/index.html">
 <meta property="og:site_name" content="吉林一中信息竞赛团队博客">
+<meta property="og:description" content="$Prim$算法是一个求图中最小生成树的算法">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-06-03T04:55:02.744Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="吉林一中信息竞赛团队博客">
+<meta name="twitter:title" content="「算法笔记」Prim算法">
+<meta name="twitter:description" content="$Prim$算法是一个求图中最小生成树的算法">
   
   
     <link rel="icon" href="/jlyz.png">
@@ -142,36 +147,46 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-「算法笔记」Prim算法" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/06/03/「算法笔记」Prim算法/" class="archive-article-date">
-  	<time datetime="2019-06-03T04:49:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-03</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/06/03/「算法笔记」Prim算法/">「算法笔记」Prim算法</a>
+    <h1 class="article-title" itemprop="name">
+      「算法笔记」Prim算法
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2019/06/03/「算法笔记」Prim算法/" class="archive-article-date">
+  	<time datetime="2019-06-03T04:49:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-03</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>$Prim$算法是一个求图中最小生成树的算法</p>
+<a id="more"></a>
+<h2 id="算法思想"><a href="#算法思想" class="headerlink" title="算法思想"></a>算法思想</h2><ul>
+<li>赋边长初值极大</li>
+<li>以任意节点为根，寻找该点相邻的实际边权最小值和端点$a_1$，标记边</li>
+<li>将节点更新为$a_1$，更新与$a_1$联通的实际边长；</li>
+<li>重复上述步骤直至边长=点数-1；</li>
+</ul>
+<p>定义$dis$数组为已在最小生成树中的点到$i$点边权最小，例如若$p_1,p_2$在树内，<br>则$dis[i]=min(p_1\to i,p_2\to i)$</p>
+<h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><h3 id="链式前向星"><a href="#链式前向星" class="headerlink" title="链式前向星"></a>链式前向星</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MAXN 5010</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MAXM 200010</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> inf 0x3f3f3f3f</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">qread</span><span class="params">()</span></span>&#123;<span class="comment">//快读，可以用cin代替</span></span><br><span class="line">	<span class="keyword">int</span> f=<span class="number">1</span>,x=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">char</span> c=getchar();</span><br><span class="line">	<span class="keyword">while</span>(c&lt;<span class="string">'0'</span>||c&gt;<span class="string">'9'</span>)&#123;</span><br><span class="line">		<span class="keyword">if</span>(c==<span class="string">'-'</span>) f=<span class="number">-1</span>;</span><br><span class="line">		c=getchar();</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">while</span>(c&gt;=<span class="string">'0'</span>&amp;&amp;c&lt;=<span class="string">'9'</span>)&#123;</span><br><span class="line">		x=x*<span class="number">10</span>+c-<span class="string">'0'</span>;</span><br><span class="line">		c=getchar();</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> f*x;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">edge</span>&#123;</span></span><br><span class="line">	<span class="keyword">int</span> v,w,next;</span><br><span class="line">&#125;p[MAXM&lt;&lt;<span class="number">1</span>];</span><br><span class="line"><span class="keyword">int</span> head [MAXN],dis[MAXN],cnt,n,m,tot,now=<span class="number">1</span>,ans;</span><br><span class="line"><span class="keyword">bool</span> vis[MAXN];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> u,<span class="keyword">int</span> v,<span class="keyword">int</span> w)</span><span class="comment">//链式前向星加边</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	p[++cnt].v=v;</span><br><span class="line">	p[cnt].w=w;</span><br><span class="line">	p[cnt].next=head[u];</span><br><span class="line">	head[u]=cnt;	</span><br><span class="line">&#125; </span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">()</span></span>&#123;<span class="comment">//无向图双加边</span></span><br><span class="line">	n=qread(); m=qread();</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>,u,v,w;i&lt;=m;++i)&#123;</span><br><span class="line">		u=qread();v=qread();w=qread();</span><br><span class="line">		add(u,v,w);</span><br><span class="line">		add(v,u,w);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">prim</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;=n;++i) &#123;dis[i]=inf;&#125;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=head[<span class="number">1</span>];i;i=p[i].next)&#123;</span><br><span class="line">		dis[p[i].v]=min(dis[p[i].v],p[i].w);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">while</span>(++tot&lt;n)<span class="comment">//最小生成树边数=n-1 </span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">int</span> minn=inf;</span><br><span class="line">		vis[now]=<span class="number">1</span>;<span class="comment">//若当前边已走过，向下寻找</span></span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;++i)&#123;</span><br><span class="line">			<span class="keyword">if</span>(!vis[i]&amp;&amp;minn&gt;dis[i])&#123;</span><br><span class="line">				minn=dis[i];</span><br><span class="line">				now=i;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		ans+=minn;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=head[now];i;i=p[i].next)&#123;</span><br><span class="line">			<span class="keyword">int</span> v=p[i].v;</span><br><span class="line">			<span class="keyword">if</span>(dis[v]&gt;p[i].w&amp;&amp;!vis[v])&#123;</span><br><span class="line">				dis[v]=p[i].w;	</span><br><span class="line">			&#125;</span><br><span class="line">		&#125; </span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	init();</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%d"</span>,prim());</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<div style="text-align: right"> $Author: \text{拔刀斋}$ </div>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -191,7 +206,7 @@
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -204,131 +219,117 @@
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACq0lEQVR42u3a0U4jMQwF0P7/T3clXtlO77UnBaSTp2qgo5wgxcb24xGv59dKnj+/rVffuv6d9jdXCw8PD2+09Vcr4b1CXn9O9nD9zuRbeHh4eOd415d+cn0nG70OJMnd3gYqPDw8vJ/lteEhT9DbJ3h4eHh/hTdLo9vttp/x8PDwfoqXpMJtyXV/3SdHfFutBQ8PDy/mtUnwb/h8sL+Hh4eHt+iqJ2s2TJBf95vd4uHh4Z3gbYqwbUusLVIkyChg4OHh4R3j5Zd4OxDQhoQkNy6KuXh4eHi38tov5Ml0fkDtRZ8fOh4eHt45XvsPf55kfybkFDMReHh4eGte3liaNavaQDKjvknK8fDw8A7wZoGhTZTzkm6eiLd/JDw8PLw9ry2k5rXhu2CbogkeHh7ead5+BKo9iDbtrg8aDw8P7xjv3kLD/vl1uCoKEHh4eHgHeG0bbJ9AJ5ubPXn5Tjw8PLwDvOLHo9Q2SZ3bgsXs/Xh4eHh73qygMGtTtU21FvafN+Dh4eEd4OXhYVau3TSxHuVaRT88PDy8mDdLYfMjSLbbviE5Jjw8PLxP8pKt7IeiWnZbvMDDw8M7zWsv4lnSPBs4mCXZeHh4eKd5bRusTXBnb8hLzG8aYHh4eHi38u4t0c6KFO1AVfLkZZcPDw8P7yZePhaQlxVmSfCmrLxqAuLh4eGNZpBaajsCdW4MKwoGeHh4eB/ktWWLvFx7V+kWDw8P75O8Z7lmLfwW2bbQ3gxd4eHh4d3Kq5vxi6DSjltt2Hh4eHinebOiwGZ8apZMt8URPDw8vNO8WTFi9l//pkjx0VoLHh4e3rEy7qY8kTfG8rCEh4eH93t4yWW9Gbdqg0fRBsPDw8M7wEuKEZtxq1m5tuUNzw8PDw+v5M0aYO3mTrBnoQsPDw9vwfsHGUB9ghr4e3oAAAAASUVORK5CYII=" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/05/20/「算法笔记」SPFA算法/" class="archive-article-date">
-  	<time datetime="2019-05-20T04:37:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-20</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2019/05/23/「Luogu-P1144-P3905-P3946」小练习-题解/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">「Luogu P1144 P3905 P3946」小练习-题解</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/20/「算法笔记」SPFA算法/">「算法笔记」SPFA算法</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Cpp</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">单源最短路</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/算法//" class="article-tag-list-link color3">算法</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#算法思想"><span class="toc-number">1.</span> <span class="toc-text">算法思想</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#实现"><span class="toc-number">2.</span> <span class="toc-text">实现</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#链式前向星"><span class="toc-number">2.1.</span> <span class="toc-text">链式前向星</span></a></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/05/10/「算法笔记」Dijkstra算法/" class="archive-article-date">
-  	<time datetime="2019-05-10T04:31:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-10</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/10/「算法笔记」Dijkstra算法/">「算法笔记」Dijkstra算法及堆优化</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Cpp</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">单源最短路</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/算法//" class="article-tag-list-link color3">算法</a>
-        		</li>
-      		
-		</ul>
-	</div>
+        
+    </div>
+</aside>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+
   
   
-    </div></section>
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -351,10 +352,10 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
-		isCategory: true,
+		isCategory: false,
 		open_in_new: true,
 		toc_hide_index: false,
 		root: "/",
