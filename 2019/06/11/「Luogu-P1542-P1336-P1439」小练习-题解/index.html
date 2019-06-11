@@ -6,15 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://jlyzoi.github.io">
-  <title>Tag: Cpp | 吉林一中信息竞赛团队博客</title>
+  <title>「Luogu P1542 P1336 P1439」小练习-题解 | 吉林一中信息竞赛团队博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="吉林一中信息竞赛团队博客">
-<meta property="og:url" content="https://jlyzoi.github.io/tags/Cpp/index.html">
+  <meta name="description" content="$\mathcal{「P1542」}$ 包裹传递">
+<meta name="keywords" content="Cpp,题解,Luogu">
+<meta property="og:type" content="article">
+<meta property="og:title" content="「Luogu P1542 P1336 P1439」小练习-题解">
+<meta property="og:url" content="https://jlyzoi.github.io/2019/06/11/「Luogu-P1542-P1336-P1439」小练习-题解/index.html">
 <meta property="og:site_name" content="吉林一中信息竞赛团队博客">
+<meta property="og:description" content="$\mathcal{「P1542」}$ 包裹传递">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-06-11T04:42:06.312Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="吉林一中信息竞赛团队博客">
+<meta name="twitter:title" content="「Luogu P1542 P1336 P1439」小练习-题解">
+<meta name="twitter:description" content="$\mathcal{「P1542」}$ 包裹传递">
   
   
     <link rel="icon" href="/jlyz.png">
@@ -142,36 +147,47 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-「Luogu-P1542-P1336-P1439」小练习-题解" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      「Luogu P1542 P1336 P1439」小练习-题解
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/06/11/「Luogu-P1542-P1336-P1439」小练习-题解/" class="archive-article-date">
+
+        
+        <a href="/2019/06/11/「Luogu-P1542-P1336-P1439」小练习-题解/" class="archive-article-date">
   	<time datetime="2019-06-11T04:24:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-11</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/06/11/「Luogu-P1542-P1336-P1439」小练习-题解/">「Luogu P1542 P1336 P1439」小练习-题解</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="mathcal-「P1542」-包裹传递"><a href="#mathcal-「P1542」-包裹传递" class="headerlink" title="$\mathcal{「P1542」}$ 包裹传递"></a>$\mathcal{「P1542」}$ <a href="https://www.luogu.org/problemnew/show/P1542" target="_blank" rel="noopener">包裹传递</a></h2><a id="more"></a>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>看到题目中的<strong>最大速度的最小值</strong>,可以知道这是一道<strong><em>二分答案</em></strong>的题目</p>
+<blockquote>
+<p>像<strong>最大值最小</strong>,<strong>最小值最大</strong>这样的题目一般都使用二分答案来做</p>
+</blockquote>
+<p>我们可以对最大速度进行二分<br>然后使用<code>check</code>函数判断<code>mid</code>是否满足<br>$PS.$由于需要考虑精度问题,需要使用<code>long double</code>,并使用<code>%Lf</code>输出</p>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">read</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> x = <span class="number">0</span>; <span class="keyword">int</span> f = <span class="number">1</span>; <span class="keyword">char</span> ch = getchar();</span><br><span class="line">    <span class="keyword">while</span> (!<span class="built_in">isdigit</span>(ch)) &#123;<span class="keyword">if</span> (ch == <span class="string">'-'</span>) f = <span class="number">-1</span>; ch = getchar();&#125;</span><br><span class="line">    <span class="keyword">while</span> (<span class="built_in">isdigit</span>(ch))  &#123;x = x * <span class="number">10</span> + ch - <span class="number">48</span>; ch = getchar();&#125;</span><br><span class="line">    <span class="keyword">return</span> x * f;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">200010</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n, x[maxn], y[maxn], s[maxn];</span><br><span class="line"><span class="keyword">long</span> <span class="keyword">double</span> l, r, mid;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">check</span><span class="params">(<span class="keyword">long</span> <span class="keyword">double</span> mid)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">long</span> <span class="keyword">double</span> sum = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i) &#123;</span><br><span class="line">        sum += s[i] / mid;</span><br><span class="line">        <span class="keyword">if</span> (sum &gt; y[i]) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">if</span> (sum &lt; x[i]) sum = x[i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    n = read();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i) &#123;</span><br><span class="line">        x[i] = read(); y[i] = read(); s[i] = read();</span><br><span class="line">    &#125;</span><br><span class="line">    l = <span class="number">0</span>, r = <span class="number">1e9</span>;</span><br><span class="line">    <span class="keyword">while</span> (r - l &gt;= <span class="number">0.000001</span>) &#123;</span><br><span class="line">        mid = (l + r) / <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">if</span> (check(mid)) r = mid;</span><br><span class="line">        <span class="keyword">else</span> l = mid;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%.2Lf\n"</span>, r);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* 250ms 1824kB */</span></span><br></pre></td></tr></table></figure>
+<h2 id="mathcal-「P1336」-最佳课题选择"><a href="#mathcal-「P1336」-最佳课题选择" class="headerlink" title="$\mathcal{「P1336」}$ 最佳课题选择"></a>$\mathcal{「P1336」}$ <a href="https://www.luogu.org/problemnew/show/P1336" target="_blank" rel="noopener">最佳课题选择</a></h2><p>一道比较简单的<strong>动态规划</strong>问题<br>状态转移方程:<br>$$f[j]=min\{f[j], f[j-k]+a[i]\times k^{b[i]}\}$$</p>
+<h3 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> min(a, b) a &lt; b ? a : b</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">read</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> x = <span class="number">0</span>; <span class="keyword">int</span> f = <span class="number">1</span>; <span class="keyword">char</span> ch = getchar();</span><br><span class="line">    <span class="keyword">while</span> (!<span class="built_in">isdigit</span>(ch)) &#123;<span class="keyword">if</span> (ch == <span class="string">'-'</span>) f = <span class="number">-1</span>; ch = getchar();&#125;</span><br><span class="line">    <span class="keyword">while</span> (<span class="built_in">isdigit</span>(ch))  &#123;x = x * <span class="number">10</span> + ch - <span class="number">48</span>; ch = getchar();&#125;</span><br><span class="line">    <span class="keyword">return</span> x * f;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">25</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n, m;</span><br><span class="line"><span class="keyword">int</span> a[maxn], b[maxn];</span><br><span class="line"><span class="keyword">int</span> dp[<span class="number">2010</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    n = read(); m = read();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= m; ++i) &#123;</span><br><span class="line">        a[i] = read(); b[i] = read();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">memset</span>(dp, <span class="number">0x3f</span>, <span class="keyword">sizeof</span>(dp));</span><br><span class="line">    dp[<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= m; ++i) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = n; j &gt;= <span class="number">1</span>; --j) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> k = j; k &gt;= <span class="number">1</span>; --k) &#123;</span><br><span class="line">                dp[j] = min(dp[j], dp[j - k] + a[i] * <span class="built_in">pow</span>(k, b[i]));</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d\n"</span>, dp[n]);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* 83ms 792kB */</span></span><br></pre></td></tr></table></figure>
+<h2 id="mathcal-「P1439」-最长公共子序列"><a href="#mathcal-「P1439」-最长公共子序列" class="headerlink" title="$\mathcal{「P1439」}$ 最长公共子序列"></a>$\mathcal{「P1439」}$ <a href="https://www.luogu.org/problemnew/show/P1439" target="_blank" rel="noopener">最长公共子序列</a></h2><h3 id="朴素做法"><a href="#朴素做法" class="headerlink" title="朴素做法"></a>朴素做法</h3><p>动态规划<br>先继承<br>$$f[i][j]=max\{f[i-1][j],f[i][j-1]\}$$<br>如果$a[i]=b[j]$,则更新<br>$$f[i][j]=max\{f[i][j],f[i-1][j-1]+1\}$$<br>复杂度$O(n^2)$无法通过本题</p>
+<h3 id="O-n-log-n-做法"><a href="#O-n-log-n-做法" class="headerlink" title="$O(n\log n)$做法"></a>$O(n\log n)$做法</h3><p>因为两个序列都是$1~n$的全排列,那么两个序列元素互异且相同,也就是说只是位置不同罢了<br>那么我们通过一个$\_map$数组将$a$序列的数字在$b$序列中的位置表示出来<br>因为最长公共子序列是按位向后比对的,所以$a$序列每个元素在$b$序列中的位置如果递增,就说明$b$中的这个数在$a$中的这个数整体位置偏后,可以考虑纳入$LCS$<br>那么就可以转变成$O(n\log n)$求用来记录新的位置的$\_map$数组中的$LIS$</p>
+<h4 id="代码-2"><a href="#代码-2" class="headerlink" title="代码"></a>代码</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">read</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> x = <span class="number">0</span>, f = <span class="number">1</span>; <span class="keyword">char</span> ch = getchar();</span><br><span class="line">    <span class="keyword">while</span> (!<span class="built_in">isdigit</span>(ch)) &#123;<span class="keyword">if</span> (ch == <span class="string">'-'</span>) f = <span class="number">-1</span>; ch = getchar();&#125;</span><br><span class="line">    <span class="keyword">while</span> (<span class="built_in">isdigit</span>(ch))  &#123;x = x * <span class="number">10</span> + ch - <span class="number">48</span>; ch = getchar();&#125;</span><br><span class="line">    <span class="keyword">return</span> x * f;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">100010</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> f[maxn], a[maxn], b[maxn], _map[maxn], len;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n = read();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i) a[i] = read(), _map[a[i]] = i;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i) b[i] = read(), f[i] = <span class="number">0x7f7f7f7f</span>;</span><br><span class="line">    f[<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i) &#123;</span><br><span class="line">        <span class="keyword">int</span> l = <span class="number">0</span>, r = len, mid;</span><br><span class="line">        <span class="keyword">if</span> (_map[b[i]] &gt; f[len]) &#123;</span><br><span class="line">            f[++len] = _map[b[i]];</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">while</span> (l &lt; r) &#123;</span><br><span class="line">                mid = (l + r) &gt;&gt; <span class="number">1</span>;</span><br><span class="line">                <span class="keyword">if</span> (f[mid] &gt; _map[b[i]]) r = mid;</span><br><span class="line">                <span class="keyword">else</span> l = mid + <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            f[l] = min(_map[b[i]], f[l]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d\n"</span>, len);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* 76ms 2320kB */</span></span><br></pre></td></tr></table></figure>
+<hr>
+<div style="text-align: right"> $Author: \mathcal{Tony\_Wong}$ </div>
+      
 
-        <div class="article-info info-on-right">
-          
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -191,7 +207,7 @@
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -204,359 +220,117 @@
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACvUlEQVR42u3dwa4aMRAEQP7/p1+ukZI13R6bEKk4RcgBlw/roWek93rFr58/Xr+//7QyWbNe/7Tm8AsPDw9vvPWnr2zfeeKt31/vMN8zHh4e3m3e+uuTh/X6c9abmF82j+/j4eHhfQ1vvTIpgvdW4uHh4f2/vAlg/X/zkAIPDw/v3/LyaHWNydck4cJHsxY8PDy8mJcHqd/z7yv9PTw8PLxxV30SFiQbauPaerd4eHh4F3htKTwJF9rjmJT1eHh4eLd5k1q0PZS9COPshYSHh4d3irfZXiqDjKSAXm96rxWHh4eHd5bXRgBtlJBvOh8pKK4fPDw8vAu8dit56Zyv3yMdCCDw8PDwtnjtg7sdKThbZNejV3h4eHhHeXvl7yTCyDfaRiFvOnt4eHh4h3iTQrlthuXB8d5owpuSGg8PD+8QLx+HmsQERXUfBxZR+Y6Hh4d3gdcW1pMBqXkYkUfGm78b8PDw8MZXRTscsBc3JKVzu6au4vHw8PBi3l5j6exoVP4tdWCBh4eHd4FXJ75bkcRoQ2XjLUqs8fDw8Ma85IGbfM28zZ+PLxzIWvDw8PC2ePnDuo0V8qhib8ArOlA8PDy8y7z5z/524CA/jras/8vFgIeHh3eU15bISdg6B7Qr6wwDDw8Pbz8Z2PyDc21w0I4CnBpNwMPDw7vNmzzQ87ZZ2yprhwxe7Vni4eHhDXhtcJC089tPawe86nsPDw8P7xCvHWyaHE2+pr1aoi4fHh4e3oD3U74S6nwIYN48e+zv4eHh4Y15ex/dNvVPBbLt5YSHh4d3j9deBnXNPrge2qGEurDGw8PDG/DaTeejV5NDmbTQ8PDw8L6H1xbKnzmazdEBPDw8vI/w8gd0O2SQw44NXeHh4eENeO3DOrkMTgUQbYmPh4eHd5u394M/f+jvHUT7mQf6e3h4eHjveb8A6dxek6SmsScAAAAASUVORK5CYII=" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/06/03/「算法笔记」Prim算法/" class="archive-article-date">
-  	<time datetime="2019-06-03T04:49:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-03</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2019/06/03/「算法笔记」Prim算法/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">「算法笔记」Prim算法</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/06/03/「算法笔记」Prim算法/">「算法笔记」Prim算法</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Cpp</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">最小生成树</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/算法//" class="article-tag-list-link color3">算法</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#mathcal-「P1542」-包裹传递"><span class="toc-number">1.</span> <span class="toc-text">$\mathcal{「P1542」}$ 包裹传递</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#思路"><span class="toc-number">1.1.</span> <span class="toc-text">思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码"><span class="toc-number">1.2.</span> <span class="toc-text">代码</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#mathcal-「P1336」-最佳课题选择"><span class="toc-number">2.</span> <span class="toc-text">$\mathcal{「P1336」}$ 最佳课题选择</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#代码-1"><span class="toc-number">2.1.</span> <span class="toc-text">代码</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#mathcal-「P1439」-最长公共子序列"><span class="toc-number">3.</span> <span class="toc-text">$\mathcal{「P1439」}$ 最长公共子序列</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#朴素做法"><span class="toc-number">3.1.</span> <span class="toc-text">朴素做法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#O-n-log-n-做法"><span class="toc-number">3.2.</span> <span class="toc-text">$O(n\log n)$做法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#代码-2"><span class="toc-number">3.2.1.</span> <span class="toc-text">代码</span></a></li></ol></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/05/23/「Luogu-P1144-P3905-P3946」小练习-题解/" class="archive-article-date">
-  	<time datetime="2019-05-23T04:33:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-23</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/23/「Luogu-P1144-P3905-P3946」小练习-题解/">「Luogu P1144 P3905 P3946」小练习-题解</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Cpp</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">题解</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Luogu</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/题解//" class="article-tag-list-link color3">题解</a>
-        		</li>
-      		
-		</ul>
-	</div>
+        
+    </div>
+</aside>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/05/20/「算法笔记」SPFA算法/" class="archive-article-date">
-  	<time datetime="2019-05-20T04:37:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-20</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/20/「算法笔记」SPFA算法/">「算法笔记」SPFA算法</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Cpp</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">单源最短路</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/算法//" class="article-tag-list-link color3">算法</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/05/20/「Luogu-P2723-P1631-P2850」小练习-题解/" class="archive-article-date">
-  	<time datetime="2019-05-20T04:35:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-20</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/20/「Luogu-P2723-P1631-P2850」小练习-题解/">「Luogu P2723 P1631 P2850」小练习-题解</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Cpp</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">题解</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Luogu</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/题解//" class="article-tag-list-link color3">题解</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/05/10/「算法笔记」Dijkstra算法/" class="archive-article-date">
-  	<time datetime="2019-05-10T04:31:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-10</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/10/「算法笔记」Dijkstra算法/">「算法笔记」Dijkstra算法及堆优化</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Cpp</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">单源最短路</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/算法//" class="article-tag-list-link color3">算法</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/05/09/「Luogu-P5020-P1621-P4942」小练习-题解/" class="archive-article-date">
-  	<time datetime="2019-05-09T04:58:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-09</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/09/「Luogu-P5020-P1621-P4942」小练习-题解/">「Luogu P5020 P1621 P4942」小练习-题解</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Cpp</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">题解</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Luogu</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/题解//" class="article-tag-list-link color3">题解</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
   
-    </div></section>
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -579,9 +353,9 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: true,
 		toc_hide_index: false,
