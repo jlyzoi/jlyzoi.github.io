@@ -6,15 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://jlyzoi.github.io">
-  <title>Tag: HUSTOJ | 吉林一中信息竞赛团队博客</title>
+  <title>「Contest1063」冲刺2019-02 - 题解 | 吉林一中信息竞赛团队博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="吉林一中信息竞赛团队博客">
-<meta property="og:url" content="https://jlyzoi.github.io/tags/HUSTOJ/index.html">
+  <meta name="description" content="三道数据结构综合小题，预计洛谷上评分 绿+紫+蓝">
+<meta name="keywords" content="Cpp,题解,HUSTOJ">
+<meta property="og:type" content="article">
+<meta property="og:title" content="「Contest1063」冲刺2019-02 - 题解">
+<meta property="og:url" content="https://jlyzoi.github.io/2019/09/02/「Contest1063」冲刺2019-02-题解/index.html">
 <meta property="og:site_name" content="吉林一中信息竞赛团队博客">
+<meta property="og:description" content="三道数据结构综合小题，预计洛谷上评分 绿+紫+蓝">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-09-02T04:53:33.016Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="吉林一中信息竞赛团队博客">
+<meta name="twitter:title" content="「Contest1063」冲刺2019-02 - 题解">
+<meta name="twitter:description" content="三道数据结构综合小题，预计洛谷上评分 绿+紫+蓝">
   
   
     <link rel="icon" href="/jlyz.png">
@@ -142,36 +147,77 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-「Contest1063」冲刺2019-02-题解" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      「Contest1063」冲刺2019-02 - 题解
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/09/02/「Contest1063」冲刺2019-02-题解/" class="archive-article-date">
+
+        
+        <a href="/2019/09/02/「Contest1063」冲刺2019-02-题解/" class="archive-article-date">
   	<time datetime="2019-09-02T04:33:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-02</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/09/02/「Contest1063」冲刺2019-02-题解/">「Contest1063」冲刺2019-02 - 题解</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>三道<strong>数据结构综合</strong>小题，预计洛谷上评分 <em>绿+紫+蓝</em></p>
+<a id="more"></a>
+<h2 id="mathcal-「Problem-A」-骑士之战"><a href="#mathcal-「Problem-A」-骑士之战" class="headerlink" title="$\mathcal{「Problem\ A」}$ 骑士之战"></a>$\mathcal{「Problem\ A」}$ <a href="http://192.168.0.123/problem.php?cid=1063&amp;pid=0" target="_blank" rel="noopener">骑士之战</a></h2><h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>用<strong>链表</strong>来模拟整个过程</p>
+<ul>
+<li>初始化,每个节点$\texttt{i}$左端接$\texttt{i-1}$右端接$\texttt{i+1}$</li>
+<li>对于每一次比赛,从获胜者向左找到最左端$\texttt{l}$,再向右找到最右端$\texttt{r}$,将其间每个骑士设为被$\texttt{x}$打败</li>
+</ul>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">read</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> x = <span class="number">0</span>; <span class="keyword">int</span> f = <span class="number">1</span>; <span class="keyword">char</span> ch = getchar();</span><br><span class="line">    <span class="keyword">while</span> (!<span class="built_in">isdigit</span>(ch)) &#123;<span class="keyword">if</span> (ch == <span class="string">'-'</span>) f = <span class="number">-1</span>; ch = getchar();&#125;</span><br><span class="line">    <span class="keyword">while</span> (<span class="built_in">isdigit</span>(ch))  &#123;x = x * <span class="number">10</span> + ch - <span class="number">48</span>; ch = getchar();&#125;</span><br><span class="line">    <span class="keyword">return</span> x * f;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">3000010</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Node</span> &#123;</span></span><br><span class="line">    <span class="keyword">int</span> l, r;</span><br><span class="line">&#125;a[maxn];</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n, m, ans[maxn];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    n = read(); m = read();</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">        a[i].l = i - <span class="number">1</span>;</span><br><span class="line">        a[i].r = i + <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= m; i++) &#123;</span><br><span class="line">        <span class="keyword">int</span> l = read(), r = read(), x = read();</span><br><span class="line">        <span class="keyword">int</span> cnt = a[x].l;</span><br><span class="line">		<span class="keyword">while</span> (cnt &gt;= l) &#123;</span><br><span class="line">			ans[cnt] = x;</span><br><span class="line">			a[a[cnt].l].r = a[cnt].r;</span><br><span class="line">			a[a[cnt].r].l = a[cnt].l;</span><br><span class="line">			cnt = a[cnt].l;</span><br><span class="line">		&#125;</span><br><span class="line">		cnt = a[x].r;</span><br><span class="line">		<span class="keyword">while</span> (cnt &lt;= r) &#123;</span><br><span class="line">			ans[cnt] = x;</span><br><span class="line">			a[a[cnt].l].r = a[cnt].r;</span><br><span class="line">			a[a[cnt].r].l = a[cnt].l;</span><br><span class="line">			cnt = a[cnt].r;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d "</span>, ans[i]);</span><br><span class="line">    &#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* By Tony_Wong */</span></span><br></pre></td></tr></table></figure>
+<h2 id="mathcal-「Problem-B」-操作系统"><a href="#mathcal-「Problem-B」-操作系统" class="headerlink" title="$\mathcal{「Problem\ B」}$ 操作系统"></a>$\mathcal{「Problem\ B」}$ <a href="http://192.168.0.123/problem.php?cid=1063&amp;pid=1" target="_blank" rel="noopener">操作系统</a></h2><h3 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h3><p><strong>模拟+优先队列</strong></p>
+<h4 id="首先来分析题意"><a href="#首先来分析题意" class="headerlink" title="首先来分析题意"></a>首先来分析题意</h4><p>维护若干个进程（含编号pid,内存m,优先级p)<br>每个进程有若干个信息(含优先级p)</p>
+<h4 id="需要维护的信息"><a href="#需要维护的信息" class="headerlink" title="需要维护的信息"></a>需要维护的信息</h4><ol>
+<li>每个进程中优先级最高的信息，设其为q1[]</li>
+<li>所有信息中综合优先级最高的信息,设其为q2</li>
+<li>所有进程中内存最大的进程</li>
+</ol>
+<h4 id="支持的操作"><a href="#支持的操作" class="headerlink" title="支持的操作"></a>支持的操作</h4><ol>
+<li>创建</li>
+<li>查询</li>
+<li>删除</li>
+<li>修改</li>
+</ol>
+<h4 id="简单的部分"><a href="#简单的部分" class="headerlink" title="简单的部分"></a>简单的部分</h4><p>一个优先队列维护内存最大的进程<br>一个优先队列数组维护每个进程的最大信息<br>用一个$\texttt{vis}$数组维护编号为$\texttt{pid}$的进程是否可用<br>这样就完成了<code>create</code>,<code>message</code>,<code>process</code>,<code>kill</code>,<code>killmax</code>操作</p>
+<h4 id="难的部分"><a href="#难的部分" class="headerlink" title="难的部分"></a>难的部分</h4><ol>
+<li>如何删除：采用懒惰删除法，将优先队列中元素是否可用移到出队时判断</li>
+<li><strong>如何判断</strong>：$\texttt{q2}$中的信息是可用的：<ul>
+<li>所属进程是可用的</li>
+<li>是所属进程中最大优先级的那个</li>
+<li>所属进程的优先级没有更改 </li>
+</ul>
+</li>
+<li>如何修改：将$\texttt{pid}$进程的优先级更改，并将$\texttt{q1[pid].top()}$插入$\texttt{q2}$<br><strong>注意</strong> 修改时只更新了优先级最高的那个信息，因为暂时只有它会对$\texttt{q2}$的答案有影响，但是若最高优先级的信息被使用了，下一个优先级的信息便需要插入到$\texttt{q2}$中。也就是说，我们q2里一定保存了每个进程中优先级最高的信息（想一想，为什么）</li>
+<li>关于创建，每次创建相当于改了内存和优先级，所以插入操作同修改</li>
+</ol>
+<h4 id="几个注意点"><a href="#几个注意点" class="headerlink" title="几个注意点"></a>几个注意点</h4><ol>
+<li>进程被删除后信息仍在</li>
+<li>优先队列务必注意判断是否为空</li>
+<li>优先队列是大根堆</li>
+</ol>
+<h4 id="复杂度分析"><a href="#复杂度分析" class="headerlink" title="复杂度分析"></a>复杂度分析</h4><p>总共N次操作，每次往每个优先队列插入1个值，插入复杂度$O(\log_2N)$<br>复杂度$O(N\log_2N)$</p>
+<h3 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">100010</span>;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Dte</span>&#123;</span></span><br><span class="line">    <span class="keyword">int</span> i,p,ph;</span><br><span class="line">    <span class="keyword">bool</span> <span class="keyword">operator</span> &lt; (<span class="keyword">const</span> Dte B)<span class="keyword">const</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> (<span class="number">1l</span>l*p*ph)&lt;(<span class="number">1l</span>l*B.p*B.ph);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">typedef</span> pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt; pii;</span><br><span class="line">priority_queue&lt;pii,<span class="built_in">vector</span>&lt;pii&gt;,greater&lt;pii&gt; &gt;q1;</span><br><span class="line">priority_queue&lt;<span class="keyword">int</span>&gt;q2[N];</span><br><span class="line">priority_queue&lt;Dte&gt;q3;</span><br><span class="line"><span class="keyword">int</span> n,vis[N],h[N],mem[N];</span><br><span class="line"><span class="keyword">char</span> s[<span class="number">20</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%s"</span>,s+<span class="number">1</span>);</span><br><span class="line">        <span class="comment">//字符串的一种暴力判断方式：看各位字母</span></span><br><span class="line">        <span class="keyword">if</span>(s[<span class="number">1</span>]==<span class="string">'c'</span>&amp;&amp;s[<span class="number">2</span>]==<span class="string">'r'</span>)&#123;</span><br><span class="line">            <span class="keyword">int</span> i,m,p;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%d%d%d"</span>,&amp;i,&amp;m,&amp;p);</span><br><span class="line">            <span class="keyword">if</span>(!vis[i])&#123;</span><br><span class="line">                q1.push(make_pair(-m,i));</span><br><span class="line">                <span class="comment">//pair的比较是现比较第一个元素，后比较第二个元素</span></span><br><span class="line">                <span class="comment">//优先队列是大根堆，所以m要取负数</span></span><br><span class="line">                vis[i]=<span class="number">1</span>;h[i]=p;mem[i]=m;</span><br><span class="line">                <span class="comment">//不空才能插入</span></span><br><span class="line">                <span class="keyword">if</span>(!q2[i].empty())</span><br><span class="line">                   q3.push((Dte)&#123;i,q2[i].top(),h[i]&#125;);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="built_in">printf</span>(<span class="string">"Error\n"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(s[<span class="number">1</span>]==<span class="string">'m'</span>)&#123;</span><br><span class="line">            <span class="keyword">int</span> i,p;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;i,&amp;p);</span><br><span class="line">            <span class="keyword">if</span>(vis[i])&#123;</span><br><span class="line">                q2[i].push(p);</span><br><span class="line">                q3.push((Dte)&#123;i,p,h[i]&#125;);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="built_in">printf</span>(<span class="string">"Error\n"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(s[<span class="number">1</span>]==<span class="string">'p'</span>)&#123;</span><br><span class="line">            <span class="keyword">int</span> i;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;i);</span><br><span class="line">            <span class="keyword">if</span>(vis[i])&#123;</span><br><span class="line">                <span class="keyword">if</span>(q2[i].empty())&#123;<span class="built_in">printf</span>(<span class="string">"Empty\n"</span>);&#125;</span><br><span class="line">                <span class="keyword">else</span>&#123;</span><br><span class="line">                    <span class="built_in">printf</span>(<span class="string">"Process: %d\n"</span>,q2[i].top());</span><br><span class="line">                    q2[i].pop();</span><br><span class="line">                    <span class="comment">//优先级最大的信息用了，次大的信息应加入</span></span><br><span class="line">                    <span class="keyword">if</span>(!q2[i].empty())q3.push((Dte)&#123;i,q2[i].top(),h[i]&#125;);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="built_in">printf</span>(<span class="string">"Error\n"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(s[<span class="number">1</span>]==<span class="string">'r'</span>)&#123;</span><br><span class="line">            <span class="keyword">if</span>(q3.empty())&#123;<span class="built_in">printf</span>(<span class="string">"Empty\n"</span>);<span class="keyword">continue</span>;&#125;</span><br><span class="line">            <span class="keyword">int</span> flag=<span class="number">1</span>;Dte now=q3.top();q3.pop();</span><br><span class="line">            <span class="keyword">while</span>((!vis[now.i])||h[now.i]!=now.ph||q2[now.i].empty()||(now.p!=q2[now.i].top()))&#123;</span><br><span class="line">                <span class="keyword">if</span>(q3.empty())&#123;</span><br><span class="line">                    <span class="built_in">printf</span>(<span class="string">"Empty\n"</span>);</span><br><span class="line">                    flag=<span class="number">0</span>;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                now=q3.top();q3.pop();</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(!flag)&#123;<span class="keyword">continue</span>;&#125;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"Run: %lld\n"</span>,<span class="number">1l</span>l*now.p*now.ph);</span><br><span class="line">            q2[now.i].pop();</span><br><span class="line">            <span class="comment">//同上</span></span><br><span class="line">            <span class="keyword">if</span>(!q2[now.i].empty())&#123;</span><br><span class="line">                q3.push((Dte)&#123;now.i,q2[now.i].top(),h[now.i]&#125;);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(s[<span class="number">1</span>]==<span class="string">'c'</span>)&#123;</span><br><span class="line">            <span class="keyword">int</span> i,p;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;i,&amp;p);</span><br><span class="line">            <span class="keyword">if</span>(vis[i])&#123;</span><br><span class="line">                h[i]=p;</span><br><span class="line">                <span class="comment">//这里只更新一个最大优先级的信息，确保时间复杂度</span></span><br><span class="line">                <span class="keyword">if</span>(!q2[i].empty())q3.push((Dte)&#123;i,q2[i].top(),h[i]&#125;);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="built_in">printf</span>(<span class="string">"Error\n"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(s[<span class="number">1</span>]==<span class="string">'k'</span>&amp;&amp;s[<span class="number">5</span>]==<span class="string">'m'</span>)&#123;</span><br><span class="line">            <span class="keyword">if</span>(q1.empty())<span class="built_in">printf</span>(<span class="string">"Empty\n"</span>);</span><br><span class="line">            <span class="keyword">else</span>&#123;</span><br><span class="line">                <span class="keyword">int</span> pid=q1.top().second,mm=q1.top().first,flag=<span class="number">1</span>;</span><br><span class="line">                q1.pop();</span><br><span class="line">                <span class="comment">//m也要看改没改过，因为有kill操作</span></span><br><span class="line">                <span class="keyword">while</span>((!vis[pid])||(mem[pid]!=(-mm)))&#123;</span><br><span class="line">                    <span class="keyword">if</span>(q1.empty())&#123;flag=<span class="number">0</span>;<span class="keyword">break</span>;&#125;</span><br><span class="line">                    pid=q1.top().second;</span><br><span class="line">                    mm=q1.top().first;</span><br><span class="line">                    q1.pop();</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">if</span>(flag)&#123;</span><br><span class="line">                    <span class="built_in">printf</span>(<span class="string">"Kill: %d\n"</span>,pid);</span><br><span class="line">                    vis[pid]=<span class="number">0</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">else</span> <span class="built_in">printf</span>(<span class="string">"Empty\n"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(s[<span class="number">1</span>]==<span class="string">'k'</span>)&#123;</span><br><span class="line">            <span class="keyword">int</span> i;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;i);</span><br><span class="line">            <span class="keyword">if</span>(vis[i])vis[i]=<span class="number">0</span>;</span><br><span class="line">            <span class="keyword">else</span> <span class="built_in">printf</span>(<span class="string">"Error\n"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* By zty */</span></span><br></pre></td></tr></table></figure>
+<h2 id="mathcal-「Problem-C」-飞扬的小鸟"><a href="#mathcal-「Problem-C」-飞扬的小鸟" class="headerlink" title="$\mathcal{「Problem\ C」}$ 飞扬的小鸟"></a>$\mathcal{「Problem\ C」}$ <a href="http://192.168.0.123/problem.php?cid=1063&amp;pid=2" target="_blank" rel="noopener">飞扬的小鸟</a></h2><h3 id="思路-2"><a href="#思路-2" class="headerlink" title="思路"></a>思路</h3><p>使用<strong>单调队列</strong>优化<strong>DP</strong></p>
+<p>可以发现这道题的$\texttt{dp}$是一个递增序列<br>状态转移:$\texttt{dp[i]=min(dp[j])+cost}$<br>所以可以使用前$\texttt{k}$个数用单调队列优化</p>
+<p>$$\texttt{dp[i] = min(dp[i], dp[q[j]] + ext + t[i].w)}$$</p>
+<h3 id="代码-2"><a href="#代码-2" class="headerlink" title="代码"></a>代码</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">read</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> x = <span class="number">0</span>; <span class="keyword">int</span> f = <span class="number">1</span>; <span class="keyword">char</span> ch = getchar();</span><br><span class="line">    <span class="keyword">while</span> (!<span class="built_in">isdigit</span>(ch)) &#123;<span class="keyword">if</span> (ch == <span class="string">'-'</span>) f = <span class="number">-1</span>; ch = getchar();&#125;</span><br><span class="line">    <span class="keyword">while</span> (<span class="built_in">isdigit</span>(ch))  &#123;x = x * <span class="number">10</span> + ch - <span class="number">48</span>; ch = getchar();&#125;</span><br><span class="line">    <span class="keyword">return</span> x * f;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">1000010</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> inf  = <span class="number">0x3f3f3f3f</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Tree</span> &#123;</span></span><br><span class="line">    <span class="keyword">int</span> h, w;</span><br><span class="line">&#125;t[maxn];</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n, k, d, tail = <span class="number">1</span>, head = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">int</span> dp[maxn], q[maxn];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    n = read(); k = read(); d = read();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i) &#123;</span><br><span class="line">        t[i].h = read(); t[i].w = read();</span><br><span class="line">    &#125;</span><br><span class="line">    dp[<span class="number">1</span>] = t[<span class="number">1</span>].w; q[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= n; ++i) &#123;</span><br><span class="line">        dp[i] = inf;</span><br><span class="line">        <span class="keyword">while</span> (i - q[head] &gt; k) &#123;</span><br><span class="line">            head++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = head; j &lt; tail &amp;&amp; dp[q[j]] == dp[q[head]]; ++j) &#123;</span><br><span class="line">            <span class="keyword">int</span> ext = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">if</span> (t[q[j]].h &lt;= t[i].h) &#123;</span><br><span class="line">                ext = d;</span><br><span class="line">            &#125;</span><br><span class="line">            dp[i] = min(dp[i], dp[q[j]] + ext + t[i].w);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span> (dp[i] &lt; dp[q[tail - <span class="number">1</span>]] &amp;&amp; head &lt; tail) &#123;</span><br><span class="line">            tail--;</span><br><span class="line">        &#125;</span><br><span class="line">        q[tail++] = i;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d\n"</span>, dp[n]);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* By Tony_Wong */</span></span><br></pre></td></tr></table></figure>
+      
 
-        <div class="article-info info-on-right">
-          
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -191,7 +237,7 @@
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -204,74 +250,117 @@
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACsElEQVR42u3awYrjQAwE0Pn/n56FvezCEFMldYcMPJ+CMXY/Hyyl1F9f8fH99/h55v/z3z+OV+eTK5/vefjAw8PDGy09efDz7+eX8rzQ5zPtK8PDw8N7Dy9f3KszOSla1ui14uHh4X0ab9Ze568s6Yfx8PDwfhevuGkMaKl4eHh4n8N7f8D6XHiSQORw1oKHh4cX8/ZLef/vi/M9PDw8vMVUPY9Z82vycdeB1eLh4eFd4CUP24cLbagxi4BfrgoPDw/vKK8NcGef+Pz6POSNSgseHh7eBV47TMo3B8yGZ20UmzwdDw8P7ywvH3olmPw+eZHIm2w8PDy89/PaQVReJPJAti0AUcqCh4eHd43XftbzAVi7xCKBTv4r4OHh4R3lzUZQ7RCrxbebA4poGA8PD+8orw0jZmOwthS1Gw7qGRoeHh5eyWtHTZsR/o12PIpx8fDw8C7z2ob4VNt9NvYtFoeHh4dX8tpItN1kkA/J9pFuAcbDw8Nb8zYf8dkGgtkryJ/7csqHh4eHd5S3+b2JFTZhRx3m4uHh4R3izVrVvAnetOybth4PDw/vBq/dzJRnG21RyYOJInTGw8PDu8A7NdRvm+kkUZ4VHjw8PLzbvLYMtEtstyNsQuHVG8XDw8Mb8dqBUxuqttFDHuau8hU8PDy8Ba/d2NSmxckShwXg1Trx8PDwLvD24/xZCRkGsqPXjYeHh3eWN1t6sumqLRjJMKw+8PDw8C7zZgs9dbc2dIgCZTw8PLwLvPYbuyknSTO9aeXx8PDw3snbfL7zAX/+uc8LT9R84+Hh4V3j7cddsy0Cmxj3ytYrPDw8vKO8ZLS/aZrzfwD50/Hw8PA+h3cqpGhb57wpx8PDw7vNa4deSePb3iEvP/lT8PDw8G7w9gOwJBrOSbP1XJzv4eHh4f07/gD8AJKXB7TLagAAAABJRU5ErkJggg==" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/08/22/「Contest1062」冲刺2019-01-题解/" class="archive-article-date">
-  	<time datetime="2019-08-22T04:33:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-22</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2019/08/22/「Contest1062」冲刺2019-01-题解/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">「Contest1062」冲刺2019-01 - 题解</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/08/22/「Contest1062」冲刺2019-01-题解/">「Contest1062」冲刺2019-01 - 题解</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Cpp</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">题解</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">HUSTOJ</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/题解//" class="article-tag-list-link color3">题解</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#mathcal-「Problem-A」-骑士之战"><span class="toc-number">1.</span> <span class="toc-text">$\mathcal{「Problem\ A」}$ 骑士之战</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#思路"><span class="toc-number">1.1.</span> <span class="toc-text">思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码"><span class="toc-number">1.2.</span> <span class="toc-text">代码</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#mathcal-「Problem-B」-操作系统"><span class="toc-number">2.</span> <span class="toc-text">$\mathcal{「Problem\ B」}$ 操作系统</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#思路-1"><span class="toc-number">2.1.</span> <span class="toc-text">思路</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#首先来分析题意"><span class="toc-number">2.1.1.</span> <span class="toc-text">首先来分析题意</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#需要维护的信息"><span class="toc-number">2.1.2.</span> <span class="toc-text">需要维护的信息</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#支持的操作"><span class="toc-number">2.1.3.</span> <span class="toc-text">支持的操作</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#简单的部分"><span class="toc-number">2.1.4.</span> <span class="toc-text">简单的部分</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#难的部分"><span class="toc-number">2.1.5.</span> <span class="toc-text">难的部分</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#几个注意点"><span class="toc-number">2.1.6.</span> <span class="toc-text">几个注意点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#复杂度分析"><span class="toc-number">2.1.7.</span> <span class="toc-text">复杂度分析</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码-1"><span class="toc-number">2.2.</span> <span class="toc-text">代码</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#mathcal-「Problem-C」-飞扬的小鸟"><span class="toc-number">3.</span> <span class="toc-text">$\mathcal{「Problem\ C」}$ 飞扬的小鸟</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#思路-2"><span class="toc-number">3.1.</span> <span class="toc-text">思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码-2"><span class="toc-number">3.2.</span> <span class="toc-text">代码</span></a></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
   
-    </div></section>
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -294,9 +383,9 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: true,
 		toc_hide_index: false,
