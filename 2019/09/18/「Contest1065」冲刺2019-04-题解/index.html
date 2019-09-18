@@ -6,15 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://jlyzoi.github.io">
-  <title>吉林一中信息竞赛团队博客</title>
+  <title>「Contest1065」冲刺2019-04 - 题解 | 吉林一中信息竞赛团队博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="吉林一中信息竞赛团队博客">
-<meta property="og:url" content="https://jlyzoi.github.io/index.html">
+  <meta name="description" content="三道贪心、DP小题，预计洛谷上评分 黄+橙+黄">
+<meta name="keywords" content="Cpp,题解,HUSTOJ">
+<meta property="og:type" content="article">
+<meta property="og:title" content="「Contest1065」冲刺2019-04 - 题解">
+<meta property="og:url" content="https://jlyzoi.github.io/2019/09/18/「Contest1065」冲刺2019-04-题解/index.html">
 <meta property="og:site_name" content="吉林一中信息竞赛团队博客">
+<meta property="og:description" content="三道贪心、DP小题，预计洛谷上评分 黄+橙+黄">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-09-18T07:56:59.176Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="吉林一中信息竞赛团队博客">
+<meta name="twitter:title" content="「Contest1065」冲刺2019-04 - 题解">
+<meta name="twitter:description" content="三道贪心、DP小题，预计洛谷上评分 黄+橙+黄">
   
   
     <link rel="icon" href="/jlyz.png">
@@ -142,78 +147,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-「Contest1066」冲刺2019-05-题解" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-「Contest1065」冲刺2019-04-题解" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/09/18/「Contest1066」冲刺2019-05-题解/">「Contest1066」冲刺2019-05 - 题解</a>
-    </h1>
-  
-
-        
-        <a href="/2019/09/18/「Contest1066」冲刺2019-05-题解/" class="archive-article-date">
-  	<time datetime="2019-09-18T05:04:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-18</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/09/18/「Contest1066」冲刺2019-05-题解/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-「Contest1065」冲刺2019-04-题解" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/09/18/「Contest1065」冲刺2019-04-题解/">「Contest1065」冲刺2019-04 - 题解</a>
+    <h1 class="article-title" itemprop="name">
+      「Contest1065」冲刺2019-04 - 题解
     </h1>
   
 
@@ -227,7 +168,17 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>三道<strong>贪心、DP</strong>小题，预计洛谷上评分 <em>黄+橙+黄</em></p>
-        
+<a id="more"></a>
+<h2 id="mathcal-「Problem-A」-最大团"><a href="#mathcal-「Problem-A」-最大团" class="headerlink" title="$\mathcal{「Problem\ A」}$ 最大团"></a>$\mathcal{「Problem\ A」}$ <a href="http://192.168.0.123/problem.php?cid=1065&amp;pid=0" target="_blank" rel="noopener">最大团</a></h2><h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>求最大团点数,每个团中不存在边<br>$|x_i-x_j|\geq w_i+w_j$时存在边<br>$\therefore$若不存在边,即两点间距离小于点权和<br>对于每个点,我们可以构建一个 <strong>结构体</strong>,包含两个值$\texttt{l,r}$表示此点权值能覆盖的位置<br>若两个结构体有重叠部分,则说明两点间距小于权值和<br>反之,若没有重叠部分,即$\texttt{a[i].r&lt;a[j].l}$则说明存在边,属于两个团<br>对结构体排序后,按顺序捋一遍即可</p>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">read</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> x = <span class="number">0</span>; <span class="keyword">int</span> f = <span class="number">1</span>; <span class="keyword">char</span> ch = getchar();</span><br><span class="line">    <span class="keyword">while</span> (!<span class="built_in">isdigit</span>(ch)) &#123;<span class="keyword">if</span> (ch == <span class="string">'-'</span>) f = <span class="number">-1</span>; ch = getchar();&#125;</span><br><span class="line">    <span class="keyword">while</span> (<span class="built_in">isdigit</span>(ch))  &#123;x = x * <span class="number">10</span> + ch - <span class="number">48</span>; ch = getchar();&#125;</span><br><span class="line">    <span class="keyword">return</span> x * f;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">200010</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Node</span> &#123;</span></span><br><span class="line">    <span class="keyword">int</span> l, r;</span><br><span class="line">&#125;a[maxn];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">cmp</span><span class="params">(Node a, Node b)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (a.r == b.r) <span class="keyword">return</span> a.l &gt; b.l;</span><br><span class="line">    <span class="keyword">return</span> a.r &lt; b.r;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n = read();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i) &#123;</span><br><span class="line">        <span class="keyword">int</span> x = read(), w = read();</span><br><span class="line">        a[i].l = x - w;</span><br><span class="line">        a[i].r = x + w;</span><br><span class="line">    &#125;</span><br><span class="line">    sort(a + <span class="number">1</span>, a + <span class="number">1</span> + n, cmp);</span><br><span class="line">    <span class="keyword">int</span> now = a[<span class="number">1</span>].r, ans = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i) &#123;</span><br><span class="line">        <span class="keyword">if</span> (a[i].l &gt;= now) &#123;</span><br><span class="line">            ans++;</span><br><span class="line">            now = a[i].r;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d\n"</span>, ans);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="mathcal-「Problem-B」-硬币游戏"><a href="#mathcal-「Problem-B」-硬币游戏" class="headerlink" title="$\mathcal{「Problem\ B」}$ 硬币游戏"></a>$\mathcal{「Problem\ B」}$ <a href="http://192.168.0.123/problem.php?cid=1065&amp;pid=1" target="_blank" rel="noopener">硬币游戏</a></h2><h3 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h3><p>每次拿走的硬币编号差$\texttt{k}$,很容易想到把相隔$\texttt{k}$个的分成一组,即$x,x+k,x+2k,…$<br>拿硬币时,从每组中取出相邻两个硬币,即$x+nk,x+(n+1)k$<br>通过简单推理,我们可以发现,拿硬币时每组偶数位上的硬币一定会被拿走,而奇数位上的可能会被剩下<br>要想使结果最优,如果这组总硬币数是偶数,则可以全部取走;若是奇数,则从奇数位上选一个价值最小的剩下</p>
+<h3 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> LL;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> LL <span class="title">read</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    LL x = <span class="number">0</span>; <span class="keyword">int</span> f = <span class="number">1</span>; <span class="keyword">char</span> ch = getchar();</span><br><span class="line">    <span class="keyword">while</span> (!<span class="built_in">isdigit</span>(ch)) &#123;<span class="keyword">if</span> (ch == <span class="string">'-'</span>) f = <span class="number">-1</span>; ch = getchar();&#125;</span><br><span class="line">    <span class="keyword">while</span> (<span class="built_in">isdigit</span>(ch))  &#123;x = x * <span class="number">10</span> + ch - <span class="number">48</span>; ch = getchar();&#125;</span><br><span class="line">    <span class="keyword">return</span> x * f;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">100010</span>;</span><br><span class="line"></span><br><span class="line">LL a[maxn], ans, n, k;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    n = read(); k = read();</span><br><span class="line">    <span class="keyword">for</span> (LL i = <span class="number">1</span>; i &lt;= n; ++i) &#123;</span><br><span class="line">        a[i] = read();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= k; ++i) &#123; <span class="comment">// 枚举组(k组)</span></span><br><span class="line">        LL cnt = <span class="number">0</span>, minn = <span class="number">0x3f3f3f3f</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = i; j &lt;= n; j += k) &#123;</span><br><span class="line">            cnt += <span class="number">1</span>; ans += a[j];</span><br><span class="line">            <span class="keyword">if</span> (cnt % <span class="number">2</span> == <span class="number">1</span>) &#123; <span class="comment">// 奇数位</span></span><br><span class="line">                minn = min(minn, a[j]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (cnt % <span class="number">2</span> == <span class="number">1</span>) &#123; <span class="comment">// 这组总数是奇数</span></span><br><span class="line">            ans -= minn; <span class="comment">//减最小奇数位</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%lld\n"</span>, ans);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="mathcal-「Problem-C」-摘樱桃"><a href="#mathcal-「Problem-C」-摘樱桃" class="headerlink" title="$\mathcal{「Problem\ C」}$ 摘樱桃"></a>$\mathcal{「Problem\ C」}$ <a href="http://192.168.0.123/problem.php?cid=1065&amp;pid=2" target="_blank" rel="noopener">摘樱桃</a></h2><h3 id="方法-I-动态规划"><a href="#方法-I-动态规划" class="headerlink" title="方法$I.$动态规划"></a>方法$I.$动态规划</h3><p>$\texttt{dp[i]}$表示,前$\texttt{i}$个樱桃分成若干组的最小美味度<br>状态转移方程:<br>$$\mathtt{dp[i] = min(dp[i], dp[j - 1] + (sum[i] - sum[j - 1] - T)^2)}$$</p>
+<h4 id="代码-2"><a href="#代码-2" class="headerlink" title="代码"></a>代码</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">read</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> x = <span class="number">0</span>; <span class="keyword">int</span> f = <span class="number">1</span>; <span class="keyword">char</span> ch = getchar();</span><br><span class="line">    <span class="keyword">while</span> (!<span class="built_in">isdigit</span>(ch)) &#123;<span class="keyword">if</span> (ch == <span class="string">'-'</span>) f = <span class="number">-1</span>; ch = getchar();&#125;</span><br><span class="line">    <span class="keyword">while</span> (<span class="built_in">isdigit</span>(ch))  &#123;x = x * <span class="number">10</span> + ch - <span class="number">48</span>; ch = getchar();&#125;</span><br><span class="line">    <span class="keyword">return</span> x * f;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">1010</span>;</span><br><span class="line"><span class="keyword">int</span> n, T, sum[maxn], dp[maxn];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    n = read(); T = read();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i) &#123;</span><br><span class="line">        <span class="keyword">int</span> v = read();</span><br><span class="line">        sum[i] = sum[i - <span class="number">1</span>] + v;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">memset</span>(dp, <span class="number">0x3f</span>, <span class="keyword">sizeof</span>(dp)); dp[<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= i; ++j) &#123;</span><br><span class="line">            dp[i] = min(dp[i], dp[j - <span class="number">1</span>] + (sum[i] - sum[j - <span class="number">1</span>] - T) * (sum[i] - sum[j - <span class="number">1</span>] - T));</span><br><span class="line">            <span class="comment">// dp[i]保持原样, dp[j-1]+...即把j到i合成一组</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d\n"</span>, dp[n]);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="方法-II-转化为最短路模型"><a href="#方法-II-转化为最短路模型" class="headerlink" title="方法$II.$转化为最短路模型"></a>方法$II.$转化为最短路模型</h3><p>每个樱桃为一个点<br>$\texttt{i}$到$\texttt{j}$存在一条边,即把$\texttt{i+1}$到$\texttt{j}$分成一组,边权为该组美味度<br>并且创建一个超级原点$\texttt{0}$,与每个点连一条边,表示从$\texttt{1}$到这个点为一组,边权为该组美味度<br>所求即转化为从超级原点$\texttt{0}$到最后一个点$\texttt{n}$的最短路径</p>
+<h4 id="代码-3"><a href="#代码-3" class="headerlink" title="代码"></a>代码</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">read</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> x = <span class="number">0</span>; <span class="keyword">int</span> f = <span class="number">1</span>; <span class="keyword">char</span> ch = getchar();</span><br><span class="line">    <span class="keyword">while</span> (!<span class="built_in">isdigit</span>(ch)) &#123;<span class="keyword">if</span> (ch == <span class="string">'-'</span>) f = <span class="number">-1</span>; ch = getchar();&#125;</span><br><span class="line">    <span class="keyword">while</span> (<span class="built_in">isdigit</span>(ch))  &#123;x = x * <span class="number">10</span> + ch - <span class="number">48</span>; ch = getchar();&#125;</span><br><span class="line">    <span class="keyword">return</span> x * f;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">1010</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Edge</span> &#123;</span></span><br><span class="line">    <span class="keyword">int</span> from, to, val;</span><br><span class="line">    Edge(<span class="keyword">int</span> u, <span class="keyword">int</span> v, <span class="keyword">int</span> w): from(u), to(v), val(w) &#123;&#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="built_in">vector</span>&lt;Edge&gt; edges;</span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; G[maxn];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> u, <span class="keyword">int</span> v, <span class="keyword">int</span> w)</span> </span>&#123;</span><br><span class="line">    edges.push_back(Edge(u, v, w));</span><br><span class="line">    <span class="keyword">int</span> mm = edges.size();</span><br><span class="line">    G[u].push_back(mm - <span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n, T, v, sum[maxn];</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> dis[maxn];</span><br><span class="line"><span class="keyword">bool</span> vis[maxn];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">SPFA</span><span class="params">(<span class="keyword">int</span> s)</span> </span>&#123;</span><br><span class="line">    <span class="built_in">memset</span>(dis, <span class="number">0x3f</span>, <span class="keyword">sizeof</span>(dis));</span><br><span class="line">    dis[s] = <span class="number">0</span>; vis[s] = <span class="literal">true</span>;</span><br><span class="line">    <span class="built_in">queue</span>&lt;<span class="keyword">int</span>&gt; q; q.push(s);</span><br><span class="line">    <span class="keyword">while</span> (!q.empty()) &#123;</span><br><span class="line">        <span class="keyword">int</span> u = q.front(); q.pop();</span><br><span class="line">        vis[u] = <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; G[u].size(); ++i) &#123;</span><br><span class="line">            Edge&amp; e = edges[G[u][i]];</span><br><span class="line">            <span class="keyword">if</span> (dis[e.to] &gt; dis[u] + e.val) &#123;</span><br><span class="line">                dis[e.to] = dis[u] + e.val;</span><br><span class="line">                <span class="keyword">if</span> (!vis[e.to]) &#123;</span><br><span class="line">                    q.push(e.to);</span><br><span class="line">                    vis[e.to] = <span class="literal">true</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    n = read(); T = read();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i) &#123;</span><br><span class="line">        v = read();</span><br><span class="line">        sum[i] = sum[i - <span class="number">1</span>] + v;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; n; ++i) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = i + <span class="number">1</span>; j &lt;= n; ++j) &#123;</span><br><span class="line">            <span class="keyword">int</span> w = (sum[j] - sum[i] - T) * (sum[j] - sum[i] - T);</span><br><span class="line">            add(i, j, w);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i) &#123;</span><br><span class="line">        <span class="keyword">int</span> w = (sum[i] - T) * (sum[i] - T);</span><br><span class="line">        add(<span class="number">0</span>, i, w);</span><br><span class="line">    &#125;</span><br><span class="line">    SPFA(<span class="number">0</span>);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d\n"</span>, dis[n]);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<div style="text-align: right"> $Author: \mathcal{Tony\_Wong}$ </div>
       
 
       
@@ -268,16 +219,84 @@
 
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/09/18/「Contest1065」冲刺2019-04-题解/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACrUlEQVR42u3aQW7jMBAEwPz/09nrHlZ29wxpeIHSKYhkU8UA5KQ5Pz/x9fvX9XT36Te/wfU0ytOThy88PDy8xasnA+fXEzWZlNe8ZFw8PDy827zXy/1m+U5eIr+bvzMeHh7e9/Da2jUptfPvxMPDw/t/eTPMDJZPNx4eHt4neXmgMHv1tphui/gDWQseHh5ezMtPkb7n5yvne3h4eHjrU/Vkwc1L6rzh4NQhHB4eHt4N3iyibZfp9sAsDzui5jA8PDy8C7xTBXTeRJVvHvnkFlOPh4eHt+DNwtY9oC2d23eIBsbDw8Nb89o2qfzYrG2raovsKIbAw8PDO8rbtwu0gUUbNAz/P8DDw8O7xms3gPzV2wAiP/RKim88PDy8T/I2B1r79XkW+P7jLh4eHt4FXl4o5xvGjQgjDynw8PDwPslrX7Fd9GetCZviHg8PD+8GL49Z96XtLLRdxR94eHh4F3j746h9WZxsNvlGsupNwMPDwwt4eaHctlXdOPTKi348PDy8e7y8fepsbLEpsvMIAw8PD+8zvFWTUxlYJOB8Uh4/hYeHh3eBFx3Ax8VxQto3CrSj4+Hh4Z3itYtvzp4t/W2gHO14eHh4eEd5s2V3FhycimXb8h0PDw/vBm+zPczutpOVTNCV3Q8PDw9vFOO25ezZbaOFFZU+Hh4e3prXFr75wMlmkI9e/2Hw8PDwLvM2rVSvXzqPG9rrzXfi4eHhHeXtS9hZzLppDigCDjw8PLwLvHbxTYrsfGNImq5mBfpwb8HDw8OLeadihdkxWL7EtxEJHh4e3m1e3miVP98GwbNOsTefxcPDw/sC3uyZTZzRtiAU2QYeHh7e1/Da4//N828mBQ8PD+8aLz/0SjBtcpxEvauNAQ8PD+/8eX09/KZJazMRF8/38PDw8N7z/gDGctpPUS9HiAAAAABJRU5ErkJggg==" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2019/09/18/「Contest1066」冲刺2019-05-题解/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          「Contest1066」冲刺2019-05 - 题解
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/09/05/「Contest1064」冲刺2019-03-题解/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">「Contest1064」冲刺2019-03 - 题解</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -292,761 +311,32 @@
         </div>
         
         
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-「Contest1064」冲刺2019-03-题解" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/09/05/「Contest1064」冲刺2019-03-题解/">「Contest1064」冲刺2019-03 - 题解</a>
-    </h1>
-  
-
-        
-        <a href="/2019/09/05/「Contest1064」冲刺2019-03-题解/" class="archive-article-date">
-  	<time datetime="2019-09-05T04:27:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-05</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>三道<strong>图论</strong>小题，预计洛谷上评分 <em>绿+紫+绿</em></p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Cpp</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">题解</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">HUSTOJ</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/题解//" class="article-tag-list-link color3">题解</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/09/05/「Contest1064」冲刺2019-03-题解/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#mathcal-「Problem-A」-最大团"><span class="toc-number">1.</span> <span class="toc-text">$\mathcal{「Problem\ A」}$ 最大团</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#思路"><span class="toc-number">1.1.</span> <span class="toc-text">思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码"><span class="toc-number">1.2.</span> <span class="toc-text">代码</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#mathcal-「Problem-B」-硬币游戏"><span class="toc-number">2.</span> <span class="toc-text">$\mathcal{「Problem\ B」}$ 硬币游戏</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#思路-1"><span class="toc-number">2.1.</span> <span class="toc-text">思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码-1"><span class="toc-number">2.2.</span> <span class="toc-text">代码</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#mathcal-「Problem-C」-摘樱桃"><span class="toc-number">3.</span> <span class="toc-text">$\mathcal{「Problem\ C」}$ 摘樱桃</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#方法-I-动态规划"><span class="toc-number">3.1.</span> <span class="toc-text">方法$I.$动态规划</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#代码-2"><span class="toc-number">3.1.1.</span> <span class="toc-text">代码</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#方法-II-转化为最短路模型"><span class="toc-number">3.2.</span> <span class="toc-text">方法$II.$转化为最短路模型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#代码-3"><span class="toc-number">3.2.1.</span> <span class="toc-text">代码</span></a></li></ol></li></ol></li></ol>
+                    </div>
+                </span>
             </div>
         </div>
         
-        
     </div>
 </aside>
 
 
 
-
-  
-    <article id="post-「Contest1063」冲刺2019-02-题解" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/09/02/「Contest1063」冲刺2019-02-题解/">「Contest1063」冲刺2019-02 - 题解</a>
-    </h1>
-  
-
-        
-        <a href="/2019/09/02/「Contest1063」冲刺2019-02-题解/" class="archive-article-date">
-  	<time datetime="2019-09-02T04:33:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-02</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>三道<strong>数据结构综合</strong>小题，预计洛谷上评分 <em>绿+紫+蓝</em></p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Cpp</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">题解</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">HUSTOJ</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/题解//" class="article-tag-list-link color3">题解</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/09/02/「Contest1063」冲刺2019-02-题解/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-「Contest1062」冲刺2019-01-题解" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/22/「Contest1062」冲刺2019-01-题解/">「Contest1062」冲刺2019-01 - 题解</a>
-    </h1>
-  
-
-        
-        <a href="/2019/08/22/「Contest1062」冲刺2019-01-题解/" class="archive-article-date">
-  	<time datetime="2019-08-22T04:33:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-22</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>三道<strong>搜索</strong>小题，预计洛谷上评分 <em>橙+橙+蓝</em></p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Cpp</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">题解</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">HUSTOJ</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/题解//" class="article-tag-list-link color3">题解</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/08/22/「Contest1062」冲刺2019-01-题解/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-「算法笔记」树形DP" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/06/13/「算法笔记」树形DP/">「算法笔记」树形DP</a>
-    </h1>
-  
-
-        
-        <a href="/2019/06/13/「算法笔记」树形DP/" class="archive-article-date">
-  	<time datetime="2019-06-13T04:27:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-13</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>顾名思义,树形$DP$是指在一棵<strong>树</strong>上进行的<strong>动态规划</strong>操作</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Cpp</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">DP</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/算法//" class="article-tag-list-link color3">算法</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/06/13/「算法笔记」树形DP/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-「Luogu-P1594-P2672-P2678」小练习-题解" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/06/11/「Luogu-P1594-P2672-P2678」小练习-题解/">「Luogu P1594 P2672 P2678」小练习-题解</a>
-    </h1>
-  
-
-        
-        <a href="/2019/06/11/「Luogu-P1594-P2672-P2678」小练习-题解/" class="archive-article-date">
-  	<time datetime="2019-06-11T04:43:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-11</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="mathcal-「P1594」-护卫队"><a href="#mathcal-「P1594」-护卫队" class="headerlink" title="$\mathcal{「P1594」}$ 护卫队"></a>$\mathcal{「P1594」}$ <a href="https://www.luogu.org/problemnew/show/P1594" target="_blank" rel="noopener">护卫队</a></h2>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Cpp</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">题解</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Luogu</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/题解//" class="article-tag-list-link color3">题解</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/06/11/「Luogu-P1594-P2672-P2678」小练习-题解/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-「Luogu-P1542-P1336-P1439」小练习-题解" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/06/11/「Luogu-P1542-P1336-P1439」小练习-题解/">「Luogu P1542 P1336 P1439」小练习-题解</a>
-    </h1>
-  
-
-        
-        <a href="/2019/06/11/「Luogu-P1542-P1336-P1439」小练习-题解/" class="archive-article-date">
-  	<time datetime="2019-06-11T04:24:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-11</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="mathcal-「P1542」-包裹传递"><a href="#mathcal-「P1542」-包裹传递" class="headerlink" title="$\mathcal{「P1542」}$ 包裹传递"></a>$\mathcal{「P1542」}$ <a href="https://www.luogu.org/problemnew/show/P1542" target="_blank" rel="noopener">包裹传递</a></h2>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Cpp</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">题解</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Luogu</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/题解//" class="article-tag-list-link color3">题解</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/06/11/「Luogu-P1542-P1336-P1439」小练习-题解/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-「算法笔记」Prim算法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/06/03/「算法笔记」Prim算法/">「算法笔记」Prim算法</a>
-    </h1>
-  
-
-        
-        <a href="/2019/06/03/「算法笔记」Prim算法/" class="archive-article-date">
-  	<time datetime="2019-06-03T04:49:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-03</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>$Prim$算法是一个求图中最小生成树的算法</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Cpp</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">最小生成树</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/算法//" class="article-tag-list-link color3">算法</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/06/03/「算法笔记」Prim算法/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-「Luogu-P1144-P3905-P3946」小练习-题解" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/23/「Luogu-P1144-P3905-P3946」小练习-题解/">「Luogu P1144 P3905 P3946」小练习-题解</a>
-    </h1>
-  
-
-        
-        <a href="/2019/05/23/「Luogu-P1144-P3905-P3946」小练习-题解/" class="archive-article-date">
-  	<time datetime="2019-05-23T04:33:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-23</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="mathcal-「P1144」-最短路计数"><a href="#mathcal-「P1144」-最短路计数" class="headerlink" title="$\mathcal{「P1144」}$ 最短路计数"></a>$\mathcal{「P1144」}$ <a href="https://www.luogu.org/problemnew/show/P1144" target="_blank" rel="noopener">最短路计数</a></h2>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Cpp</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">题解</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Luogu</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/题解//" class="article-tag-list-link color3">题解</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/05/23/「Luogu-P1144-P3905-P3946」小练习-题解/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
   
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
-    </nav>
+  
+
+  
+
+  
+
   
 
 
@@ -1069,8 +359,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: true,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
