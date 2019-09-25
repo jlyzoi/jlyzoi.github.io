@@ -6,15 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://jlyzoi.github.io">
-  <title>Category: 题解 | 吉林一中信息竞赛团队博客</title>
+  <title>「Contest1067」冲刺2019-06 - 题解 | 吉林一中信息竞赛团队博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="吉林一中信息竞赛团队博客">
-<meta property="og:url" content="https://jlyzoi.github.io/categories/题解/index.html">
+  <meta name="description" content="LCA+ST表+树剖，预计洛谷上评分 蓝+蓝+紫">
+<meta name="keywords" content="Cpp,题解,HUSTOJ">
+<meta property="og:type" content="article">
+<meta property="og:title" content="「Contest1067」冲刺2019-06 - 题解">
+<meta property="og:url" content="https://jlyzoi.github.io/2019/09/25/「Contest1067」冲刺2019-06-题解/index.html">
 <meta property="og:site_name" content="吉林一中信息竞赛团队博客">
+<meta property="og:description" content="LCA+ST表+树剖，预计洛谷上评分 蓝+蓝+紫">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-09-25T09:13:36.288Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="吉林一中信息竞赛团队博客">
+<meta name="twitter:title" content="「Contest1067」冲刺2019-06 - 题解">
+<meta name="twitter:description" content="LCA+ST表+树剖，预计洛谷上评分 蓝+蓝+紫">
   
   
     <link rel="icon" href="/jlyz.png">
@@ -142,93 +147,74 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-「Contest1067」冲刺2019-06-题解" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/09/25/「Contest1068」冲刺2019-07-题解/" class="archive-article-date">
-  	<time datetime="2019-09-25T09:14:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-25</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/09/25/「Contest1068」冲刺2019-07-题解/">「Contest1068」冲刺2019-07 - 题解</a>
+    <h1 class="article-title" itemprop="name">
+      「Contest1067」冲刺2019-06 - 题解
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Cpp</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">题解</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">HUSTOJ</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/题解//" class="article-tag-list-link color3">题解</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/09/25/「Contest1067」冲刺2019-06-题解/" class="archive-article-date">
+        
+        <a href="/2019/09/25/「Contest1067」冲刺2019-06-题解/" class="archive-article-date">
   	<time datetime="2019-09-25T08:21:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-25</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/09/25/「Contest1067」冲刺2019-06-题解/">「Contest1067」冲刺2019-06 - 题解</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>LCA+ST表+树剖</strong>，预计洛谷上评分 <em>蓝+蓝+紫</em></p>
+<a id="more"></a>
+<h2 id="mathcal-「Problem-A」-相遇"><a href="#mathcal-「Problem-A」-相遇" class="headerlink" title="$\mathcal{「Problem\ A」}$ 相遇"></a>$\mathcal{「Problem\ A」}$ <a href="http://192.168.0.123/problem.php?cid=1067&amp;pid=0" target="_blank" rel="noopener">相遇</a></h2><h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>给出一棵树,询问两条路径是否相交<br>如果相交，记$\texttt{x=lca(a,b), y=lca(c,d)}$,则必有$x$在路径$c\sim d$上或$y$在$a\sim b$路径上</p>
+<p>$proof.$来自$Luogu$</p>
+<blockquote>
+<p>首先易知两点的$lca$在其路径上<br>如果路径相交，那么$x$要么在相交的路径上，要么不在<br>我们不妨记相交的那段为$e\sim f$<br>如果不在，由对称性，不妨设$x$靠近$a$，那么有$a$到$x$深度递减<br>$b$到$e$、$e$到$f$、$f$到$x$深度递减<br>同样，肯定有$c$到$f$、$d$到$e$深度递减<br>由此可知，$y$必定为$f$</p>
+</blockquote>
+<p>$Q.E.D$</p>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">read</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> x = <span class="number">0</span>; <span class="keyword">int</span> f = <span class="number">1</span>; <span class="keyword">char</span> ch = getchar();</span><br><span class="line">    <span class="keyword">while</span> (!<span class="built_in">isdigit</span>(ch)) &#123;<span class="keyword">if</span> (ch == <span class="string">'-'</span>) f = <span class="number">-1</span>; ch = getchar();&#125;</span><br><span class="line">    <span class="keyword">while</span> (<span class="built_in">isdigit</span>(ch))  &#123;x = x * <span class="number">10</span> + ch - <span class="number">48</span>; ch = getchar();&#125;</span><br><span class="line">    <span class="keyword">return</span> x * f;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">100010</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Edge</span> &#123;</span></span><br><span class="line">    <span class="keyword">int</span> from, to;</span><br><span class="line">    Edge(<span class="keyword">int</span> u, <span class="keyword">int</span> v): from(u), to(v) &#123;&#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="built_in">vector</span>&lt;Edge&gt; edges;</span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; G[maxn];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> u, <span class="keyword">int</span> v)</span> </span>&#123;</span><br><span class="line">    edges.push_back(Edge(u, v));</span><br><span class="line">    edges.push_back(Edge(v, u));</span><br><span class="line">    <span class="keyword">int</span> mm = edges.size();</span><br><span class="line">    G[v].push_back(mm - <span class="number">1</span>);</span><br><span class="line">    G[u].push_back(mm - <span class="number">2</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> f[maxn][<span class="number">20</span>], d[maxn];</span><br><span class="line"><span class="keyword">int</span> n, m, t;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">bfs</span><span class="params">(<span class="keyword">int</span> s)</span> </span>&#123;</span><br><span class="line">    <span class="built_in">queue</span>&lt;<span class="keyword">int</span>&gt; q;</span><br><span class="line">    q.push(s); d[s] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (!q.empty()) &#123;</span><br><span class="line">        <span class="keyword">int</span> x = q.front(); q.pop();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; G[x].size(); ++i) &#123;</span><br><span class="line">            Edge&amp; e = edges[G[x][i]];</span><br><span class="line">            <span class="keyword">if</span> (d[e.to]) <span class="keyword">continue</span>;</span><br><span class="line">            d[e.to] = d[x] + <span class="number">1</span>;</span><br><span class="line">            f[e.to][<span class="number">0</span>] = x;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= t; ++j) &#123;</span><br><span class="line">                f[e.to][j] = f[f[e.to][j - <span class="number">1</span>]][j - <span class="number">1</span>];</span><br><span class="line">            &#125;</span><br><span class="line">            q.push(e.to);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">lca</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (d[x] &gt; d[y]) swap(x, y);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = t; i &gt;= <span class="number">0</span>; --i) &#123;</span><br><span class="line">        <span class="keyword">if</span> (d[f[y][i]] &gt;= d[x]) y = f[y][i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (x == y) <span class="keyword">return</span> x;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = t; i &gt;= <span class="number">0</span>; --i) &#123;</span><br><span class="line">        <span class="keyword">if</span> (f[x][i] != f[y][i]) &#123;</span><br><span class="line">            x = f[x][i];</span><br><span class="line">            y = f[y][i];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> f[x][<span class="number">0</span>];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> T = read();</span><br><span class="line">    <span class="keyword">while</span> (T--) &#123;</span><br><span class="line">        edges.clear();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; maxn; ++i) &#123;</span><br><span class="line">            G[i].clear();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">memset</span>(d, <span class="number">0</span>, <span class="keyword">sizeof</span>(d));</span><br><span class="line">        <span class="built_in">memset</span>(f, <span class="number">0</span>, <span class="keyword">sizeof</span>(f));</span><br><span class="line">        n = read(), m = read();</span><br><span class="line">        t = (<span class="keyword">int</span>)(<span class="built_in">log</span>(n) / <span class="built_in">log</span>(<span class="number">2</span>)) + <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; n; ++i) &#123;</span><br><span class="line">            <span class="keyword">int</span> u = read(), v = read();</span><br><span class="line">            add(u, v);</span><br><span class="line">        &#125;</span><br><span class="line">        bfs(<span class="number">1</span>);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= m; ++i) &#123;</span><br><span class="line">            <span class="keyword">int</span> _x1 = read(), _y1 = read(), _x2 = read(), _y2 = read();</span><br><span class="line">            <span class="keyword">int</span> p = lca(_x1, _y1);</span><br><span class="line">            <span class="keyword">int</span> q = lca(_x2, _y2);</span><br><span class="line">            <span class="keyword">if</span> (p == q) &#123;</span><br><span class="line">                <span class="built_in">puts</span>(<span class="string">"YES"</span>);</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (d[p] &lt; d[q]) &#123;</span><br><span class="line">                <span class="keyword">if</span> (lca(q, _x1) == q || lca(q, _y1) == q) &#123;</span><br><span class="line">                    <span class="built_in">puts</span>(<span class="string">"YES"</span>);</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    <span class="built_in">puts</span>(<span class="string">"NO"</span>);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">if</span> (lca(p, _x2) == p || lca(p, _y2) == p) &#123;</span><br><span class="line">                    <span class="built_in">puts</span>(<span class="string">"YES"</span>);</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    <span class="built_in">puts</span>(<span class="string">"NO"</span>);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="mathcal-「Problem-B」-计数"><a href="#mathcal-「Problem-B」-计数" class="headerlink" title="$\mathcal{「Problem\ B」}$ 计数"></a>$\mathcal{「Problem\ B」}$ <a href="http://192.168.0.123/problem.php?cid=1067&amp;pid=1" target="_blank" rel="noopener">计数</a></h2><h3 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h3><p>看到区间的最大/小值,就想到用$ST$表求解</p>
+<h4 id="60-分纯-ST-表"><a href="#60-分纯-ST-表" class="headerlink" title="$60$分纯$ST$表"></a>$60$分纯$ST$表</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">read</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> x = <span class="number">0</span>; <span class="keyword">int</span> f = <span class="number">1</span>; <span class="keyword">char</span> ch = getchar();</span><br><span class="line">    <span class="keyword">while</span> (!<span class="built_in">isdigit</span>(ch)) &#123;<span class="keyword">if</span> (ch == <span class="string">'-'</span>) f = <span class="number">-1</span>; ch = getchar();&#125;</span><br><span class="line">    <span class="keyword">while</span> (<span class="built_in">isdigit</span>(ch))  &#123;x = x * <span class="number">10</span> + ch - <span class="number">48</span>; ch = getchar();&#125;</span><br><span class="line">    <span class="keyword">return</span> x * f;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">100010</span>;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">int</span> n;</span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> ans;</span><br><span class="line"><span class="keyword">int</span> a[maxn], _fmax[maxn][<span class="number">21</span>], _fmin[maxn][<span class="number">21</span>];</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> T = read();</span><br><span class="line">    <span class="keyword">while</span> (T--) &#123;</span><br><span class="line">        n = read(); ans = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i) &#123;</span><br><span class="line">            a[i] = read();</span><br><span class="line">            _fmax[i][<span class="number">0</span>] = a[i];</span><br><span class="line">            _fmin[i][<span class="number">0</span>] = a[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= <span class="number">20</span>; ++j) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i + (<span class="number">1</span> &lt;&lt; j) - <span class="number">1</span> &lt;= n; ++i) &#123;</span><br><span class="line">                _fmax[i][j] = max(_fmax[i][j - <span class="number">1</span>], _fmax[i + (<span class="number">1</span> &lt;&lt; j - <span class="number">1</span>)][j - <span class="number">1</span>]);</span><br><span class="line">                _fmin[i][j] = min(_fmin[i][j - <span class="number">1</span>], _fmin[i + (<span class="number">1</span> &lt;&lt; j - <span class="number">1</span>)][j - <span class="number">1</span>]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = i + <span class="number">1</span>; j &lt;= n; ++j) &#123;</span><br><span class="line">                <span class="keyword">int</span> s = log2(j - i + <span class="number">1</span>);</span><br><span class="line">                <span class="keyword">int</span> maxx = max(_fmax[i][s], _fmax[j - (<span class="number">1</span> &lt;&lt; s) + <span class="number">1</span>][s]);</span><br><span class="line">                <span class="keyword">int</span> minn = min(_fmin[i][s], _fmin[j - (<span class="number">1</span> &lt;&lt; s) + <span class="number">1</span>][s]);</span><br><span class="line">                ans += (maxx - minn);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%lld\n"</span>, ans);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="100-分-ST-表-分治优化"><a href="#100-分-ST-表-分治优化" class="headerlink" title="$100$分$ST$表+分治优化"></a>$100$分$ST$表+分治优化</h4><p>虽然$ST$表查询的复杂度为$O(1)$,但这道题用$ST$表暴力求解需要查询$n^2$次,总复杂度为$O(n^2)$<br>我们可以求出<strong>所有区间的最大值的和</strong>再减去<strong>所有区间的最小值的和</strong><br>先考虑求最大值和的情况:</p>
+<blockquote>
+<ol>
+<li>先找到正在查询区间的最大值</li>
+<li>以这个值为最大值的<em>区间个数</em>为其<strong>左侧点数</strong>乘<strong>右侧点数</strong></li>
+<li>将结果(最大值的和)加上<strong>此最大值</strong>乘<strong>区间个数</strong></li>
+<li>在此值<strong>左侧区间</strong>和<strong>右侧区间</strong>进行<em>同样的操作</em></li>
+</ol>
+</blockquote>
+<p>最小值同理</p>
+<h3 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> LL;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">read</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> x = <span class="number">0</span>; <span class="keyword">int</span> f = <span class="number">1</span>; <span class="keyword">char</span> ch = getchar();</span><br><span class="line">    <span class="keyword">while</span> (!<span class="built_in">isdigit</span>(ch)) &#123;<span class="keyword">if</span> (ch == <span class="string">'-'</span>) f = <span class="number">-1</span>; ch = getchar();&#125;</span><br><span class="line">    <span class="keyword">while</span> (<span class="built_in">isdigit</span>(ch))  &#123;x = x * <span class="number">10</span> + ch - <span class="number">48</span>; ch = getchar();&#125;</span><br><span class="line">    <span class="keyword">return</span> x * f;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">100010</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n;</span><br><span class="line">LL ans;</span><br><span class="line"><span class="keyword">int</span> a[maxn], _fmax[maxn][<span class="number">21</span>], _fmin[maxn][<span class="number">21</span>];</span><br><span class="line"><span class="keyword">int</span> pos[maxn];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">funcmax</span><span class="params">(<span class="keyword">int</span> l, <span class="keyword">int</span> r)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (l &gt; r) <span class="keyword">return</span>;</span><br><span class="line">    <span class="keyword">int</span> s = log2(r - l + <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">int</span> maxx = max(_fmax[l][s], _fmax[r - (<span class="number">1</span> &lt;&lt; s) + <span class="number">1</span>][s]);</span><br><span class="line">    <span class="keyword">int</span> now = pos[maxx];</span><br><span class="line">    ans += (LL)maxx * (now - l + <span class="number">1</span>) * (r - now + <span class="number">1</span>);</span><br><span class="line">    funcmax(l, now - <span class="number">1</span>);</span><br><span class="line">    funcmax(now + <span class="number">1</span>, r);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">funcmin</span><span class="params">(<span class="keyword">int</span> l, <span class="keyword">int</span> r)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (l &gt; r) <span class="keyword">return</span>;</span><br><span class="line">    <span class="keyword">int</span> s = log2(r - l + <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">int</span> minn = min(_fmin[l][s], _fmin[r - (<span class="number">1</span> &lt;&lt; s) + <span class="number">1</span>][s]);</span><br><span class="line">    <span class="keyword">int</span> now = pos[minn];</span><br><span class="line">    ans -= (LL)minn * (now - l + <span class="number">1</span>) * (r - now + <span class="number">1</span>);</span><br><span class="line">    funcmin(l, now - <span class="number">1</span>);</span><br><span class="line">    funcmin(now + <span class="number">1</span>, r);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> T = read();</span><br><span class="line">    <span class="keyword">while</span> (T--) &#123;</span><br><span class="line">        n = read(); ans = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i) &#123;</span><br><span class="line">            a[i] = read();</span><br><span class="line">            _fmax[i][<span class="number">0</span>] = a[i];</span><br><span class="line">            _fmin[i][<span class="number">0</span>] = a[i];</span><br><span class="line">            pos[a[i]] = i; <span class="comment">// 预处理每个值的位置,方便后续操作</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= <span class="number">20</span>; ++j) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i + (<span class="number">1</span> &lt;&lt; j) - <span class="number">1</span> &lt;= n; ++i) &#123;</span><br><span class="line">                _fmax[i][j] = max(_fmax[i][j - <span class="number">1</span>], _fmax[i + (<span class="number">1</span> &lt;&lt; j - <span class="number">1</span>)][j - <span class="number">1</span>]);</span><br><span class="line">                _fmin[i][j] = min(_fmin[i][j - <span class="number">1</span>], _fmin[i + (<span class="number">1</span> &lt;&lt; j - <span class="number">1</span>)][j - <span class="number">1</span>]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        funcmax(<span class="number">1</span>, n);</span><br><span class="line">        funcmin(<span class="number">1</span>, n);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%lld\n"</span>, ans);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="mathcal-「Problem-C」-树上统计"><a href="#mathcal-「Problem-C」-树上统计" class="headerlink" title="$\mathcal{「Problem\ C」}$ 树上统计"></a>$\mathcal{「Problem\ C」}$ <a href="http://192.168.0.123/problem.php?cid=1067&amp;pid=2" target="_blank" rel="noopener">树上统计</a></h2><p><del>这题绝对超纲了</del></p>
+<h3 id="60-分暴力算法"><a href="#60-分暴力算法" class="headerlink" title="$60$分暴力算法"></a>$60$分暴力算法</h3><p>我们发现若区间左端点l固定,每次右端点r更更改后,以前联通的节点仍然需要联通,新的节点r分两种情况:</p>
+<ol>
+<li>已经在联通块中</li>
+<li>需要连到联通块中</li>
+</ol>
+<p>我们枚举区间左端点l,将无无根树转变为以l为根的有根树,此时联通块需要的边数为0<br>我们再枚举右端点r,若不不在联通块中,则向上走走(已经以l为根了了),直到接入入联通块,累加所需边数</p>
+<p><strong>时间复杂度</strong>:枚举左端点并转有根树:$n^2$,每个左端点中所有节点恰好被访问一遍:$n^2$,总时间复杂度$O(n^2)$</p>
+<h3 id="额外-20-分链上算法"><a href="#额外-20-分链上算法" class="headerlink" title="额外$20$分链上算法"></a>额外$20$分链上算法</h3><p>我们发现所有的路径可以由<code>1-&gt;2,2-&gt;3,3-&gt;4,4-&gt;5</code>的路径组合而而成<br>令<code>i-&gt;i+1</code>为基本路径<br>则每条基本路径被覆盖的次数=$\mathtt{i\times (n-i)}$<br>因为$\texttt{l=[1,i],r=[i+1,n]}$,两两组合为$\mathtt{(i+1-1)\times (n-i-1+1) = i\times (n-i)}$</p>
+<p>很明显我们重复计算了,如果<code>3-&gt;4</code>的路径包含<code>1-&gt;2</code>的路径,那么<code>1-&gt;2</code>在所有包含<code>3-&gt;4</code>的区间被算了2次<br>我们可以记录下每条边的路径序号$tag$,若发现重复就减去<br>$\texttt{ans+=len(i,i+1)*i*(n-i) - cnt(i,i+1)*(n-i)}$<br>$\texttt{len=abs(dep[i]-dep[i-1])}$<br>$\texttt{cnt}$=路径上边的序号和<br>$\texttt{cnt*(n-i)}$代表所有$\texttt{l=[1,tag],r=[i+1,n]}$的路径长之和</p>
+<p>我们要进行更改与求和操作,若暴力则是$O(n^2)$<br>可以用线段树维护$tag$,复杂度下降为$O(n\log_2n)$</p>
+<h3 id="100-分-LCA-树剖正解"><a href="#100-分-LCA-树剖正解" class="headerlink" title="$100$分$LCA$树剖正解"></a>$100$分$LCA$树剖正解</h3><p>将链上算法推广到树,将树分成链<br>树链剖分维护边权:把边的权值给它深度高的一点<br>$\texttt{len=dep[i]+dep[i+1]-2*dep[lca(i,i+1)]}$<br>修改与查询时不带$\texttt{lca(i,i+1)}$</p>
+<p><strong>时间复杂度</strong>: 枚举$O(n)$,树剖$O(\log_2^2n)$,总时间复杂度$O(n\log_2^2n)$<br>树剖常数小,应付$10^6$的数据绰绰有余</p>
+<p><strong>核心代码</strong>:<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; n; ++i) &#123; <span class="comment">// 枚举基本路径i-&gt;i+1</span></span><br><span class="line">        <span class="keyword">int</span> LCA = lca(i, i + <span class="number">1</span>);</span><br><span class="line">        ans += (dep[i] + dep[i + <span class="number">1</span>] - dep[LCA] * <span class="number">2</span>) * i * (n - i);</span><br><span class="line">        <span class="comment">// 加上本次覆盖i-&gt;i+1的路径和</span></span><br><span class="line">        ans -= (qRange(i, i + <span class="number">1</span>) - qRange(LCA, LCA)) * (n - i);</span><br><span class="line">        <span class="comment">// 减去重复覆盖i-&gt;i+1的tag和,但要消除LCA点的影响</span></span><br><span class="line">        <span class="keyword">int</span> lst = qRange(LCA, LCA);</span><br><span class="line">        <span class="comment">// 记下LCA点的值</span></span><br><span class="line">        updRange(i, i + <span class="number">1</span>, i);</span><br><span class="line">        <span class="comment">// 树剖change操作</span></span><br><span class="line">        updRange(LCA, LCA, lst);</span><br><span class="line">        <span class="comment">// 把LCA点改回去</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* By zty111 */</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="100-分-dsu-on-tree-做法"><a href="#100-分-dsu-on-tree-做法" class="headerlink" title="$100$分$dsu\ on\ tree$做法"></a>$100$分$dsu\ on\ tree$做法</h3><p>关于$dsu\ on\ tree$,可以看看<a href="https://tony031218.github.io/2019/09/22/%E3%80%8C%E5%9B%BE%E8%AE%BA%E7%AE%97%E6%B3%95%E3%80%8D%E6%A0%91%E4%B8%8A%E5%B9%B6%E6%9F%A5%E9%9B%86-dsu-on-tree/" target="_blank" rel="noopener">我的博客</a></p>
+<p><del>然后上网查了这道题的题解,暴力的玄学优化</del></p>
+<p><strong>代码</strong>:<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> LL;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">read</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> x = <span class="number">0</span>; <span class="keyword">int</span> f = <span class="number">1</span>; <span class="keyword">char</span> ch = getchar();</span><br><span class="line">    <span class="keyword">while</span> (!<span class="built_in">isdigit</span>(ch)) &#123;<span class="keyword">if</span> (ch == <span class="string">'-'</span>) f = <span class="number">-1</span>; ch = getchar();&#125;</span><br><span class="line">    <span class="keyword">while</span> (<span class="built_in">isdigit</span>(ch))  &#123;x = x * <span class="number">10</span> + ch - <span class="number">48</span>; ch = getchar();&#125;</span><br><span class="line">    <span class="keyword">return</span> x * f;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">100010</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Edge</span> &#123;</span></span><br><span class="line">    <span class="keyword">int</span> from, to;</span><br><span class="line">    Edge(<span class="keyword">int</span> u, <span class="keyword">int</span> v): from(u), to(v) &#123;&#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="built_in">vector</span>&lt;Edge&gt; edges;</span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; G[maxn];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> u, <span class="keyword">int</span> v)</span> </span>&#123;</span><br><span class="line">    edges.push_back(Edge(u, v));</span><br><span class="line">    <span class="keyword">int</span> mm = edges.size();</span><br><span class="line">    G[u].push_back(mm - <span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n, siz[maxn], son[maxn], ufs[maxn], Son, ds[maxn];</span><br><span class="line"><span class="keyword">bool</span> vis[maxn];</span><br><span class="line">LL ans, AnsOut, AnsIn;</span><br><span class="line"><span class="built_in">set</span>&lt;<span class="keyword">int</span>&gt; s;</span><br><span class="line"></span><br><span class="line"><span class="function">LL <span class="title">calc</span><span class="params">(LL x)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x * (x - <span class="number">1</span>) / <span class="number">2</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">clear</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    s.clear();</span><br><span class="line">    s.insert(<span class="number">0</span>);</span><br><span class="line">    s.insert(n + <span class="number">1</span>);</span><br><span class="line">    AnsOut = calc(n);</span><br><span class="line">    AnsIn = <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs1</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> fa)</span> </span>&#123;</span><br><span class="line">    siz[x] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; G[x].size(); ++i) &#123;</span><br><span class="line">        Edge&amp; e = edges[G[x][i]];</span><br><span class="line">        <span class="keyword">if</span> (e.to == fa) <span class="keyword">continue</span>;</span><br><span class="line">        dfs1(e.to, x);</span><br><span class="line">        siz[x] += siz[e.to];</span><br><span class="line">        <span class="keyword">if</span> (siz[e.to] &gt; siz[son[x]]) &#123;</span><br><span class="line">            son[x] = e.to;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">find</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> ufs[x] == x ? x : ufs[x] = find(ufs[x]);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">upd</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> fa)</span> </span>&#123;</span><br><span class="line">    s.insert(x);</span><br><span class="line">    <span class="built_in">set</span>&lt;<span class="keyword">int</span>&gt;::iterator s1, s2, it;</span><br><span class="line">    s1 = s2 = it = s.find(x);</span><br><span class="line">    s1--; s2++;</span><br><span class="line">    AnsOut -= calc(*s2 - *s1 - <span class="number">1</span>);</span><br><span class="line">    AnsOut += calc(*s2 - *it - <span class="number">1</span>) + calc(*it - *s1 - <span class="number">1</span>);</span><br><span class="line">    vis[x] = <span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">if</span> (vis[x - <span class="number">1</span>]) &#123;</span><br><span class="line">        <span class="keyword">int</span> fx = find(x - <span class="number">1</span>);</span><br><span class="line">        <span class="keyword">int</span> fy = find(x);</span><br><span class="line">        AnsIn += ds[fx] * ds[fy];</span><br><span class="line">        ufs[fx] = fy;</span><br><span class="line">        ds[fy] += ds[fx];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (vis[x + <span class="number">1</span>]) &#123;</span><br><span class="line">        <span class="keyword">int</span> fx = find(x + <span class="number">1</span>);</span><br><span class="line">        <span class="keyword">int</span> fy = find(x);</span><br><span class="line">        AnsIn += ds[fx] * ds[fy];</span><br><span class="line">        ufs[fx] = fy;</span><br><span class="line">        ds[fy] += ds[fx];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; G[x].size(); ++i) &#123;</span><br><span class="line">        Edge&amp; e = edges[G[x][i]];</span><br><span class="line">        <span class="keyword">if</span> (e.to == fa || e.to == Son) <span class="keyword">continue</span>;</span><br><span class="line">        upd(e.to, x);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">del</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> fa)</span> </span>&#123;</span><br><span class="line">    vis[x] = <span class="literal">false</span>;</span><br><span class="line">    ds[x] = <span class="number">1</span>; ufs[x] = x;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; G[x].size(); ++i) &#123;</span><br><span class="line">        Edge&amp; e = edges[G[x][i]];</span><br><span class="line">        <span class="keyword">if</span> (e.to == fa) <span class="keyword">continue</span>;</span><br><span class="line">        del(e.to, x);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs2</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> fa, <span class="keyword">bool</span> opt)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; G[x].size(); ++i) &#123;</span><br><span class="line">        Edge&amp; e = edges[G[x][i]];</span><br><span class="line">        <span class="keyword">if</span> (e.to == fa || e.to == son[x]) <span class="keyword">continue</span>;</span><br><span class="line">        dfs2(e.to, x, <span class="literal">false</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (son[x]) &#123;</span><br><span class="line">        dfs2(son[x], x, <span class="literal">true</span>);</span><br><span class="line">        Son = son[x];</span><br><span class="line">    &#125;</span><br><span class="line">    upd(x, fa);</span><br><span class="line">    ans += calc(n) - AnsIn - AnsOut;</span><br><span class="line">    <span class="keyword">if</span> (!opt) &#123;</span><br><span class="line">        del(x, fa);</span><br><span class="line">        clear();</span><br><span class="line">        Son = <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    n = read();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; n; ++i) &#123;</span><br><span class="line">        <span class="keyword">int</span> u = read(), v = read();</span><br><span class="line">        add(u, v); add(v, u);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i) &#123;</span><br><span class="line">        ufs[i] = i;</span><br><span class="line">        ds[i] = <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    dfs1(<span class="number">1</span>, <span class="number">0</span>);</span><br><span class="line">    clear();</span><br><span class="line">    dfs2(<span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%lld\n"</span>, ans);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<hr>
+<div style="text-align: right"> $Author: \mathcal{zty} \ \&amp; \ \mathcal{Tony\_Wong}$ </div>
+      
 
-        <div class="article-info info-on-right">
-          
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -248,7 +234,7 @@
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -261,476 +247,125 @@
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACt0lEQVR42u3awZIaMQwEUP7/p5NrqlhIt2QTUvXmRLEsM88HW7T0eMTXr6frz/dfvc6v5/96f9/DFx4eHt760fMbJ399vterz7x6J2G/XAI8PDy8a7z8UfJDIlmm5ACYLR8eHh7e9/Pef1tynMxKeTw8PLz/kZc/6AyWlON4eHh4n+clYUQere6L6TbePZC14OHh4U1270e+rf/b11f6e3h4eHjrrvp+XCBfsvfPM3xaPDw8vAu8fMNNCug2VsiL8nbJ8PDw8D7D28cKeYiQL83se/Dw8PBu82YBRNv6yr9hNrB1OF/Bw8PDe3H3WWPpfYiQNLdmIwXDGAIPDw/vKG92brRb+T5oWBXQeHh4eNd47RhTHjrkRfDZ4hsPDw/vHi9/oHzr34cabaZSnH54eHh4C15Sqt4ouPPtftaiw8PDw7vHaxtLeVz7vihPiu92OYr1xsPDw1vw2oOhbeq3zbAcH41k4eHh4V3j5QdAsn23ZXESAefIR3uO4eHh4ZW8tsk0CyNONb2G0QkeHh7eR3htQZwfDPsiO48w8PDw8O7x8u14swSbODgfYsDDw8O7zau313WEcWpQoB66wsPDw7vGm23Wm209iSHy+OOH3wp4eHh4R3lFGym+ctIsls0DYjw8PLzbvPZn/6lmWDuqtcpa8PDw8A7xVifJ6HFbwGq4AQ8PD+8abxMcJOMC7RhBO1Lwl4MBDw8P7wIvPxhmD9222TbHEh4eHt493qaEzYvv2ZBB2+j64anw8PDwLvDazbcNdpNP5oHsZonx8PDwzvI2h0E7FLVpj7XjXHh4eHi3eW3oMLxZ+Q1tGPHDO3h4eHhfwMsL37ZovhJw4OHh4X0BbzY4NYs58jC3mCnDw8PDO8TLR6zacahZ+78ompODAQ8PD+8ob/ODP1+O2TLNlgMPDw/vGu832t+7YL2q/r4AAAAASUVORK5CYII=" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/09/18/「Contest1066」冲刺2019-05-题解/" class="archive-article-date">
-  	<time datetime="2019-09-18T05:04:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-18</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2019/09/25/「Contest1068」冲刺2019-07-题解/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          「Contest1068」冲刺2019-07 - 题解
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/09/18/「Contest1066」冲刺2019-05-题解/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">「Contest1066」冲刺2019-05 - 题解</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/09/18/「Contest1066」冲刺2019-05-题解/">「Contest1066」冲刺2019-05 - 题解</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Cpp</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">题解</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">HUSTOJ</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/题解//" class="article-tag-list-link color3">题解</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#mathcal-「Problem-A」-相遇"><span class="toc-number">1.</span> <span class="toc-text">$\mathcal{「Problem\ A」}$ 相遇</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#思路"><span class="toc-number">1.1.</span> <span class="toc-text">思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码"><span class="toc-number">1.2.</span> <span class="toc-text">代码</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#mathcal-「Problem-B」-计数"><span class="toc-number">2.</span> <span class="toc-text">$\mathcal{「Problem\ B」}$ 计数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#思路-1"><span class="toc-number">2.1.</span> <span class="toc-text">思路</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#60-分纯-ST-表"><span class="toc-number">2.1.1.</span> <span class="toc-text">$60$分纯$ST$表</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#100-分-ST-表-分治优化"><span class="toc-number">2.1.2.</span> <span class="toc-text">$100$分$ST$表+分治优化</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码-1"><span class="toc-number">2.2.</span> <span class="toc-text">代码</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#mathcal-「Problem-C」-树上统计"><span class="toc-number">3.</span> <span class="toc-text">$\mathcal{「Problem\ C」}$ 树上统计</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#60-分暴力算法"><span class="toc-number">3.1.</span> <span class="toc-text">$60$分暴力算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#额外-20-分链上算法"><span class="toc-number">3.2.</span> <span class="toc-text">额外$20$分链上算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#100-分-LCA-树剖正解"><span class="toc-number">3.3.</span> <span class="toc-text">$100$分$LCA$树剖正解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#100-分-dsu-on-tree-做法"><span class="toc-number">3.4.</span> <span class="toc-text">$100$分$dsu\ on\ tree$做法</span></a></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/09/18/「Contest1065」冲刺2019-04-题解/" class="archive-article-date">
-  	<time datetime="2019-09-18T05:04:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-18</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/09/18/「Contest1065」冲刺2019-04-题解/">「Contest1065」冲刺2019-04 - 题解</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Cpp</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">题解</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">HUSTOJ</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/题解//" class="article-tag-list-link color3">题解</a>
-        		</li>
-      		
-		</ul>
-	</div>
+        
+    </div>
+</aside>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/09/05/「Contest1064」冲刺2019-03-题解/" class="archive-article-date">
-  	<time datetime="2019-09-05T04:27:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-05</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/09/05/「Contest1064」冲刺2019-03-题解/">「Contest1064」冲刺2019-03 - 题解</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Cpp</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">题解</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">HUSTOJ</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/题解//" class="article-tag-list-link color3">题解</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/09/02/「Contest1063」冲刺2019-02-题解/" class="archive-article-date">
-  	<time datetime="2019-09-02T04:33:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-02</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/09/02/「Contest1063」冲刺2019-02-题解/">「Contest1063」冲刺2019-02 - 题解</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Cpp</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">题解</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">HUSTOJ</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/题解//" class="article-tag-list-link color3">题解</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/08/22/「Contest1062」冲刺2019-01-题解/" class="archive-article-date">
-  	<time datetime="2019-08-22T04:33:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/08/22/「Contest1062」冲刺2019-01-题解/">「Contest1062」冲刺2019-01 - 题解</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Cpp</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">题解</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">HUSTOJ</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/题解//" class="article-tag-list-link color3">题解</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/06/11/「Luogu-P1594-P2672-P2678」小练习-题解/" class="archive-article-date">
-  	<time datetime="2019-06-11T04:43:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-11</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/06/11/「Luogu-P1594-P2672-P2678」小练习-题解/">「Luogu P1594 P2672 P2678」小练习-题解</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Cpp</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">题解</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Luogu</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/题解//" class="article-tag-list-link color3">题解</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/06/11/「Luogu-P1542-P1336-P1439」小练习-题解/" class="archive-article-date">
-  	<time datetime="2019-06-11T04:24:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-11</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/06/11/「Luogu-P1542-P1336-P1439」小练习-题解/">「Luogu P1542 P1336 P1439」小练习-题解</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Cpp</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">题解</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Luogu</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/题解//" class="article-tag-list-link color3">题解</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/05/23/「Luogu-P1144-P3905-P3946」小练习-题解/" class="archive-article-date">
-  	<time datetime="2019-05-23T04:33:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-23</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/23/「Luogu-P1144-P3905-P3946」小练习-题解/">「Luogu P1144 P3905 P3946」小练习-题解</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Cpp</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">题解</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Luogu</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/题解//" class="article-tag-list-link color3">题解</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
   
-    </div></section>
   
 
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/categories/题解/page/2/">2</a><a class="extend next" rel="next" href="/categories/题解/page/2/">Next &raquo;</a>
-    </nav>
+  
+
+  
+
   
 
 
@@ -754,10 +389,10 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
-		isCategory: true,
+		isCategory: false,
 		open_in_new: true,
 		toc_hide_index: false,
 		root: "/",
