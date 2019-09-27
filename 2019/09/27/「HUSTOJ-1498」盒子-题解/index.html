@@ -6,15 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://jlyzoi.github.io">
-  <title>吉林一中信息竞赛团队博客</title>
+  <title>「HUSTOJ 1498」盒子 - 题解 | 吉林一中信息竞赛团队博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="吉林一中信息竞赛团队博客">
-<meta property="og:url" content="https://jlyzoi.github.io/page/2/index.html">
+  <meta name="description" content="传送门: HUSTOJ 1498 盒子运用几何知识,三角函数判断即可">
+<meta name="keywords" content="Cpp,题解,HUSTOJ,几何">
+<meta property="og:type" content="article">
+<meta property="og:title" content="「HUSTOJ 1498」盒子 - 题解">
+<meta property="og:url" content="https://jlyzoi.github.io/2019/09/27/「HUSTOJ-1498」盒子-题解/index.html">
 <meta property="og:site_name" content="吉林一中信息竞赛团队博客">
+<meta property="og:description" content="传送门: HUSTOJ 1498 盒子运用几何知识,三角函数判断即可">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://jlyzoi.github.io/2019/09/27/「HUSTOJ-1498」盒子-题解/sol.png">
+<meta property="og:updated_time" content="2019-09-27T08:31:04.732Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="吉林一中信息竞赛团队博客">
+<meta name="twitter:title" content="「HUSTOJ 1498」盒子 - 题解">
+<meta name="twitter:description" content="传送门: HUSTOJ 1498 盒子运用几何知识,三角函数判断即可">
+<meta name="twitter:image" content="https://jlyzoi.github.io/2019/09/27/「HUSTOJ-1498」盒子-题解/sol.png">
   
   
     <link rel="icon" href="/jlyz.png">
@@ -142,30 +149,32 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-「Luogu-P1542-P1336-P1439」小练习-题解" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-「HUSTOJ-1498」盒子-题解" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/06/11/「Luogu-P1542-P1336-P1439」小练习-题解/">「Luogu P1542 P1336 P1439」小练习-题解</a>
+    <h1 class="article-title" itemprop="name">
+      「HUSTOJ 1498」盒子 - 题解
     </h1>
   
 
         
-        <a href="/2019/06/11/「Luogu-P1542-P1336-P1439」小练习-题解/" class="archive-article-date">
-  	<time datetime="2019-06-11T04:24:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-11</time>
+        <a href="/2019/09/27/「HUSTOJ-1498」盒子-题解/" class="archive-article-date">
+  	<time datetime="2019-09-27T08:19:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-27</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="mathcal-「P1542」-包裹传递"><a href="#mathcal-「P1542」-包裹传递" class="headerlink" title="$\mathcal{「P1542」}$ 包裹传递"></a>$\mathcal{「P1542」}$ <a href="https://www.luogu.org/problemnew/show/P1542" target="_blank" rel="noopener">包裹传递</a></h2>
-        
+        <p>传送门: <a href="http://192.168.0.123/problem.php?id=1498" target="_blank" rel="noopener">HUSTOJ 1498 盒子</a><br>运用<strong>几何知识,三角函数</strong>判断即可</p>
+<a id="more"></a>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>先预处理数据,使每个盒子的$b&gt;a$,使$a_1 &lt; a_2$<br>这时如果$b1 \leq b2$则说明$1$号盒子长宽都比$2$号小,完全可以放进去<br>如果不是这样,那么小盒子肯定是斜着放进大盒子中的(如果可以的话),如下图<br><img src="/2019/09/27/「HUSTOJ-1498」盒子-题解/sol.png" alt><br>那么我们可以枚举角$\theta \in (0,\frac{\pi}{2})$,并且每次检查可以使小盒子以这个角度放进去的最小大盒子的长宽是否比所给大盒子大<br>即,如满足<br>$$\begin{cases} b_1 * \sin(\theta) + a_1 * \cos(\theta) \leq a_2 \\ a_1 * \sin(\theta) + b_1 * \cos(\theta) \leq b_2\end{cases}$$<br>则可以放入</p>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">read</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> x = <span class="number">0</span>; <span class="keyword">int</span> f = <span class="number">1</span>; <span class="keyword">char</span> ch = getchar();</span><br><span class="line">    <span class="keyword">while</span> (!<span class="built_in">isdigit</span>(ch)) &#123;<span class="keyword">if</span> (ch == <span class="string">'-'</span>) f = <span class="number">-1</span>; ch = getchar();&#125;</span><br><span class="line">    <span class="keyword">while</span> (<span class="built_in">isdigit</span>(ch))  &#123;x = x * <span class="number">10</span> + ch - <span class="number">48</span>; ch = getchar();&#125;</span><br><span class="line">    <span class="keyword">return</span> x * f;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">double</span> PI = <span class="number">3.141592653589793238</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> a1, b1, a2, b2;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> T = read();</span><br><span class="line">    <span class="keyword">while</span> (T--) &#123;</span><br><span class="line">        <span class="keyword">bool</span> flag = <span class="literal">false</span>;</span><br><span class="line">        a1 = read(); b1 = read();</span><br><span class="line">        a2 = read(); b2 = read();</span><br><span class="line">        <span class="keyword">if</span> (a1 &gt; b1) swap(a1, b1);</span><br><span class="line">        <span class="keyword">if</span> (a2 &gt; b2) swap(a2, b2);</span><br><span class="line">        <span class="keyword">if</span> (a1 &gt; a2) &#123;</span><br><span class="line">            swap(a1, a2); swap(b1, b2);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (b1 &lt;= b2) &#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"Yes\n"</span>);</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">double</span> theta = <span class="number">0</span>; theta &lt;= PI / <span class="number">2</span>; theta += <span class="number">0.01</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span> (b1 * <span class="built_in">sin</span>(theta) + a1 * <span class="built_in">cos</span>(theta) &lt;= a2 &amp;&amp;\</span><br><span class="line">                a1 * <span class="built_in">sin</span>(theta) + b1 * <span class="built_in">cos</span>(theta) &lt;= b2) &#123;</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">"Yes\n"</span>);</span><br><span class="line">                flag = <span class="literal">true</span>;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (!flag) <span class="built_in">printf</span>(<span class="string">"No\n"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<div style="text-align: right"> $Author: \mathcal{Tony\_Wong}$ </div>
       
 
       
@@ -186,7 +195,11 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Luogu</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">HUSTOJ</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">几何</a>
         		</li>
       		
 		</ul>
@@ -206,16 +219,75 @@
 
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/06/11/「Luogu-P1542-P1336-P1439」小练习-题解/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACt0lEQVR42u3aQW7jMAwF0N7/0h1gVgU6Vj5JcRoUz6ugTSw/Lizhkx8f8fX590r+/vnl+v6d75/P33+65+ULDw8Pr/XoT9eZd17+6W69gp5L87gKHh4e3hrvvMAZkNznqWR54fK18PDw8N6Hl59dJ9sJHh4e3m/i5ZFB7wB9/i0eHh7eu/GSMCJ5TRdigjjI+E9ZCx4eHl5tlUKo+g6fF/t7eHh4eIOuevWYmwcN1cN682nx8PDwFnhJk743IpAPVyXfnBQFDw8P7y5vHp5WG2PzbSBvreHh4eFt8HqDAnlsmm8G1ZLl98fDw8O7y8sfcfLfpLnVG0fAw8PDewdeL7q9FcXmRYw2Dzw8PLwF3q2Xch7O9mKOPPKIwgg8PDy8Ma8XlfaKUgUkG8mLbQMPDw/vKq8X1+aAajxR/dWLAz0eHh7eMq/XmJ+w89d9MwjGw8PDW+Ml1+RBe+HvuXDR1oKHh4e3wDvf6G47qsrIW3QvnhkPDw/vKi851OYNrUnzrNoMi+6Ah4eHt8DLR6aqkUH14Nvs3SVRLx4eHt5V3qQBVm1fVUPY+bAXHh4e3gZvHsXmzf7qQbzaBhsFE3h4eHgxbx49lKOBwUZSHsDCw8PD+yFesvwkos03iXKx8PDw8NZ4eTA6CXAno1TNrQIPDw9vjZe3/PNRqt6o1mQY6x/3wcPDw1vgVZepvqzzwvU2jGh1PDw8vKu8yWhUNXpIYuJebPFi38PDw8Nb4yVXfuzOC5G3ysq/wsPDw1vglV+1wYNW49387/kwVncnwcPDw0t5kwftNaiqsWzvUI6Hh4e3zbu1GVQP1hNwFBPj4eHh/ShvEt1OWmvV0jc3Bjw8PLw1Xm8AKxkmqBYuOuLj4eHhrfGqTa9bsWxyNK+OW+Hh4eFt86oNsF5RouCgGDqs9Pfw8PDwTrw/mfpUucMgv68AAAAASUVORK5CYII=" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2019/09/25/「Contest1068」冲刺2019-07-题解/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">「Contest1068」冲刺2019-07 - 题解</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -230,653 +302,32 @@
         </div>
         
         
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-「算法笔记」Prim算法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/06/03/「算法笔记」Prim算法/">「算法笔记」Prim算法</a>
-    </h1>
-  
-
-        
-        <a href="/2019/06/03/「算法笔记」Prim算法/" class="archive-article-date">
-  	<time datetime="2019-06-03T04:49:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-03</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>$Prim$算法是一个求图中最小生成树的算法</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Cpp</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">最小生成树</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/算法//" class="article-tag-list-link color3">算法</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/06/03/「算法笔记」Prim算法/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#思路"><span class="toc-number">1.</span> <span class="toc-text">思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码"><span class="toc-number">2.</span> <span class="toc-text">代码</span></a></li></ol>
+                    </div>
+                </span>
             </div>
         </div>
         
-        
     </div>
 </aside>
 
 
 
-
-  
-    <article id="post-「Luogu-P1144-P3905-P3946」小练习-题解" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/23/「Luogu-P1144-P3905-P3946」小练习-题解/">「Luogu P1144 P3905 P3946」小练习-题解</a>
-    </h1>
-  
-
-        
-        <a href="/2019/05/23/「Luogu-P1144-P3905-P3946」小练习-题解/" class="archive-article-date">
-  	<time datetime="2019-05-23T04:33:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-23</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="mathcal-「P1144」-最短路计数"><a href="#mathcal-「P1144」-最短路计数" class="headerlink" title="$\mathcal{「P1144」}$ 最短路计数"></a>$\mathcal{「P1144」}$ <a href="https://www.luogu.org/problemnew/show/P1144" target="_blank" rel="noopener">最短路计数</a></h2>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Cpp</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">题解</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Luogu</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/题解//" class="article-tag-list-link color3">题解</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/05/23/「Luogu-P1144-P3905-P3946」小练习-题解/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-「算法笔记」SPFA算法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/20/「算法笔记」SPFA算法/">「算法笔记」SPFA算法</a>
-    </h1>
-  
-
-        
-        <a href="/2019/05/20/「算法笔记」SPFA算法/" class="archive-article-date">
-  	<time datetime="2019-05-20T04:37:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-20</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>$SPFA$算法也是一种求单源最短路的算法<br>相比于$Dijkstra$,$SPFA$算法的时间复杂度更低(但没有带堆优化的$Dijkstra$快)<br>而且$SPFA$可以用于带负权边的图($Dijkstra$不可以),也可以判断是否存在负权回路</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Cpp</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">单源最短路</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/算法//" class="article-tag-list-link color3">算法</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/05/20/「算法笔记」SPFA算法/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-「Luogu-P2723-P1631-P2850」小练习-题解" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/20/「Luogu-P2723-P1631-P2850」小练习-题解/">「Luogu P2723 P1631 P2850」小练习-题解</a>
-    </h1>
-  
-
-        
-        <a href="/2019/05/20/「Luogu-P2723-P1631-P2850」小练习-题解/" class="archive-article-date">
-  	<time datetime="2019-05-20T04:35:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-20</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>战神留的还有一道<a href="https://www.luogu.org/problemnew/show/P3378" target="_blank" rel="noopener">「P3378」堆</a>,但是是模板,就不用多说了吧</p>
-<h2 id="mathcal-「P2723」-丑数"><a href="#mathcal-「P2723」-丑数" class="headerlink" title="$\mathcal{「P2723」}$ 丑数"></a>$\mathcal{「P2723」}$ <a href="https://www.luogu.org/problemnew/show/P2723" target="_blank" rel="noopener">丑数</a></h2>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Cpp</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">题解</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Luogu</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/题解//" class="article-tag-list-link color3">题解</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/05/20/「Luogu-P2723-P1631-P2850」小练习-题解/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-「算法笔记」Dijkstra算法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/10/「算法笔记」Dijkstra算法/">「算法笔记」Dijkstra算法及堆优化</a>
-    </h1>
-  
-
-        
-        <a href="/2019/05/10/「算法笔记」Dijkstra算法/" class="archive-article-date">
-  	<time datetime="2019-05-10T04:31:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-10</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>$Dijkstra$算法是寻找单源最短路(径)的算法,即寻找某个点(源点)到其他各点的最短路(径)<br>但$Dijkstra$算法无法处理含有<strong>负权边</strong>的情况</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Cpp</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">单源最短路</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/算法//" class="article-tag-list-link color3">算法</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/05/10/「算法笔记」Dijkstra算法/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-「Luogu-P5020-P1621-P4942」小练习-题解" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/09/「Luogu-P5020-P1621-P4942」小练习-题解/">「Luogu P5020 P1621 P4942」小练习-题解</a>
-    </h1>
-  
-
-        
-        <a href="/2019/05/09/「Luogu-P5020-P1621-P4942」小练习-题解/" class="archive-article-date">
-  	<time datetime="2019-05-09T04:58:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-09</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="mathcal-「P5020」-货币系统"><a href="#mathcal-「P5020」-货币系统" class="headerlink" title="$\mathcal{「P5020」}$ 货币系统"></a>$\mathcal{「P5020」}$ <a href="https://www.luogu.org/problemnew/show/P5020" target="_blank" rel="noopener">货币系统</a></h2><p>表面上是数论，其实就是个<strong><em>动态规划</em></strong></p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Cpp</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">题解</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Luogu</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/题解//" class="article-tag-list-link color3">题解</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/05/09/「Luogu-P5020-P1621-P4942」小练习-题解/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-博客开通通知" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/09/博客开通通知/">博客开通通知</a>
-    </h1>
-  
-
-        
-        <a href="/2019/05/09/博客开通通知/" class="archive-article-date">
-  	<time datetime="2019-05-09T04:45:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-09</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>吉林一中信息竞赛团队博客于$2019-5-9$成功开通</p>
-</blockquote>
-<p>本博客主要登载一些算法学习笔记和题解和$…$<br>欢迎同学们通过站长$QQ$进行投稿</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">公告</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/05/09/博客开通通知/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
   
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
-    </nav>
+  
+
+  
+
+  
+
   
 
 
@@ -899,8 +350,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: true,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
